@@ -52,6 +52,7 @@
     <Compile Include="DataAccessLayer\ConnectionConfig.cs" />
     <Compile Include="DataAccessLayer\StaffDAL.cs" />
     <Compile Include="Helper\ErrorLog.cs" />
+    <Compile Include="Model\StaffClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

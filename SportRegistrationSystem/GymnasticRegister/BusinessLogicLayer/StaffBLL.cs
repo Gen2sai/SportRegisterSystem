@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using GymnasticRegister.DataAccessLayer;
+using GymnasticRegister.Model;
 
 namespace GymnasticRegister.BusinessLogicLayer
 {
@@ -12,9 +13,9 @@ namespace GymnasticRegister.BusinessLogicLayer
     {
         public bool Login(string Username, string Password)
         {
-            int loginCount = StaffDAL.LoginStaff(Username, Password);
+            List<StaffClass> results = StaffDAL.LoginStaff(Username, Password);
 
-            return loginCount == 1;
+            return results.Count > 0;
         }
 
         public bool RegisterStaff(string Username, string Password, string Fullname, int Permission)
