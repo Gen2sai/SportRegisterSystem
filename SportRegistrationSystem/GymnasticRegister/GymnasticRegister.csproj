@@ -50,7 +50,9 @@
   <ItemGroup>
     <Compile Include="BusinessLogicLayer\StaffBLL.cs" />
     <Compile Include="DataAccessLayer\ConnectionConfig.cs" />
-    <Compile Include="DataAccessLayer\StaffDAL.cs" />
+    <Compile Include="DataAccessLayer\StaffDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Helper\ErrorLog.cs" />
     <Compile Include="Model\StaffClass.cs" />
     <Compile Include="Program.cs" />
