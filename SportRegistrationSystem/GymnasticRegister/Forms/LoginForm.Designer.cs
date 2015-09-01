@@ -80,6 +80,7 @@ namespace GymnasticRegister
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "button1";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnRegister
             // 

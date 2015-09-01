@@ -1,6 +1,6 @@
 ﻿namespace GymnasticRegister.Model
 {
-    class StaffClass
+    public class StaffClass
     {
         public int StaffID { get; set; }
 

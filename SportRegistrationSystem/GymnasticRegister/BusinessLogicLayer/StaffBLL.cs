@@ -6,11 +6,11 @@ namespace GymnasticRegister.BusinessLogicLayer
 {
     internal class StaffBLL
     {
-        public bool Login(string Username, string Password)
+        public static List<StaffClass> Login(string Username, string Password)
         {
             List<StaffClass> results = StaffDAL.LoginStaff(Username, Password);
 
-            return results.Count > 0;
+            return results;
         }
 
         public static bool RegisterStaff(string Username, string Password, string Fullname, int Permission)

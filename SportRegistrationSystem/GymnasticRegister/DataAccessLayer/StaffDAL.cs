@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using GymnasticRegister.Helper;
 using GymnasticRegister.Model;
@@ -16,28 +17,25 @@ namespace GymnasticRegister.DataAccessLayer
                 SqlConnection conn = new SqlConnection(ConnectionConfig.GetConnectionString());
                 SqlCommand cmd;
                 SqlDataReader dr;
-                
-                cmd = new SqlCommand("SELECT * FROM  User WHERE Username = @username AND Password = @password", conn);
+
+                cmd = new SqlCommand("SELECT * FROM Staff WHERE Username = @username AND Password = @password", conn);
                 cmd.Parameters.AddWithValue("@username", Username);
                 cmd.Parameters.AddWithValue("@password", Password);
 
                 conn.Open();
-                //int x = (int)cmd.ExecuteScalar();
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    for (int i = 0; i < dr.FieldCount; i++)
+                    StaffClass items = new StaffClass
                     {
-                        StaffClass items = new StaffClass();
+                        StaffID = dr.GetInt32(0),
+                        Username = dr.GetString(1),
+                        Password = dr.GetString(2),
+                        Fullname = dr.GetString(3),
+                        PermissionID = dr.GetInt32(4)
+                    };
 
-                        items.StaffID = dr.GetInt32(0);
-                        items.Username = dr.GetString(1);
-                        items.Password = dr.GetString(2);
-                        items.Fullname = dr.GetString(3);
-                        items.PermissionID = dr.GetInt32(4);
-
-                        results.Add(items);
-                    }
+                    results.Add(items);
                 }
                 conn.Close();
 
