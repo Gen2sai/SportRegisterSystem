@@ -7,9 +7,9 @@ using GymnasticRegister.Model;
 
 namespace GymnasticRegister.DataAccessLayer
 {
-    class StaffDAL
+    class StaffDal
     {
-        public static List<StaffClass> LoginStaff(string Username, string Password)
+        public static List<StaffClass> LoginStaff(string username, string password)
         {
             List<StaffClass> results = new List<StaffClass>();
             try
@@ -19,8 +19,8 @@ namespace GymnasticRegister.DataAccessLayer
                 SqlDataReader dr;
 
                 cmd = new SqlCommand("SELECT * FROM Staff WHERE Username = @username AND Password = @password", conn);
-                cmd.Parameters.AddWithValue("@username", Username);
-                cmd.Parameters.AddWithValue("@password", Password);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
 
                 conn.Open();
                 dr = cmd.ExecuteReader();
@@ -28,11 +28,11 @@ namespace GymnasticRegister.DataAccessLayer
                 {
                     StaffClass items = new StaffClass
                     {
-                        StaffID = dr.GetInt32(0),
+                        StaffId = dr.GetInt32(0),
                         Username = dr.GetString(1),
                         Password = dr.GetString(2),
                         Fullname = dr.GetString(3),
-                        PermissionID = dr.GetInt32(4)
+                        PermissionId = dr.GetInt32(4)
                     };
 
                     results.Add(items);
@@ -48,7 +48,7 @@ namespace GymnasticRegister.DataAccessLayer
             }
         }
 
-        public static int CreateStaff(string Username, string Password, string Fullname, int Permission)
+        public static int CreateStaff(string username, string password, string fullname, int permission)
         {
             try
             {
@@ -59,10 +59,10 @@ namespace GymnasticRegister.DataAccessLayer
                 cmd =
                     new SqlCommand(
                         "IF(NOT EXISTS(SELECT Username FROM Staff WHERE Username = @Username)) BEGIN INSERT INTO Staff (Username, Password, FullName, PermissionID) VALUES (@Username, @Password, @FullName, @PermissionID) END", conn);
-                cmd.Parameters.AddWithValue("@Username", Username);
-                cmd.Parameters.AddWithValue("@Password", Password);
-                cmd.Parameters.AddWithValue("@Fullname", Fullname);
-                cmd.Parameters.AddWithValue("@PermissionID", Permission);
+                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@Fullname", fullname);
+                cmd.Parameters.AddWithValue("@PermissionID", permission);
 
                 conn.Open();
                 status = cmd.ExecuteNonQuery();
@@ -77,12 +77,12 @@ namespace GymnasticRegister.DataAccessLayer
             }
         }
 
-        public static int DeleteStaff(string Username, string Password, string Fullname, int Permission)
+        public static int DeleteStaff(string username, string password, string fullname, int permission)
         {
             return 0;
         }
 
-        public static int UpdateStaff(string Username, string Password, string Fullname, int Permission)
+        public static int UpdateStaff(string username, string password, string fullname, int permission)
         {
             return 0;
         }

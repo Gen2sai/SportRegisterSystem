@@ -52,7 +52,7 @@ namespace GymnasticRegister
                     }
                     else
                     {
-                        bool registrationStatus = StaffBLL.RegisterStaff(txtUsername.Text, txtPassword.Text, txtFullName.Text, (int)System.Enum.Parse(typeof (PermissionEnum), cbPermission.SelectedValue.ToString()));
+                        bool registrationStatus = StaffBll.RegisterStaff(txtUsername.Text, txtPassword.Text, txtFullName.Text, (int)System.Enum.Parse(typeof (PermissionEnum), cbPermission.SelectedValue.ToString()));
                         if (registrationStatus)
                         {
                             MessageBox.Show(SportRegistrationSystem.lblRegisterSuccess);

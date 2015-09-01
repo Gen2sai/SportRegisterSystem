@@ -46,7 +46,7 @@ namespace GymnasticRegister
                 }
                 else
                 {
-                    List<StaffClass> loginStatus = StaffBLL.Login(txtUsername.Text, txtPassword.Text);
+                    List<StaffClass> loginStatus = StaffBll.Login(txtUsername.Text, txtPassword.Text);
                     
                     if (loginStatus.Count() == 1)
                     {

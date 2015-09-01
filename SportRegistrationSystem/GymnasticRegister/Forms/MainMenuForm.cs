@@ -16,8 +16,8 @@ namespace GymnasticRegister.Forms
         public MainMenuForm(List<StaffClass> loginStatus)
         {
             InitializeComponent();
-            string Username = loginStatus[0].Username;
-            int Permission = loginStatus[0].PermissionID;
+            string username = loginStatus[0].Username;
+            int permission = loginStatus[0].PermissionId;
         }
     }
 }

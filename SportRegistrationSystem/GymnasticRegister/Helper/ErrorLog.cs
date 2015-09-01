@@ -5,14 +5,14 @@ namespace GymnasticRegister.Helper
 {
     class ErrorLog
     {
-        private static Logger ExceptionLogger = LogManager.GetLogger("ExceptionLog");
+        private static Logger _exceptionLogger = LogManager.GetLogger("ExceptionLog");
 
         public static void LogError(Exception ex)
         {
             MappedDiagnosticsContext.Set("date", DateTime.Now.ToString());
             MappedDiagnosticsContext.Set("exception", ex.ToString());
 
-            ExceptionLogger.Error("");
+            _exceptionLogger.Error("");
         }
     }
 }

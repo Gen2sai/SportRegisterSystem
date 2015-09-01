@@ -4,18 +4,18 @@ using GymnasticRegister.Model;
 
 namespace GymnasticRegister.BusinessLogicLayer
 {
-    internal class StaffBLL
+    internal class StaffBll
     {
-        public static List<StaffClass> Login(string Username, string Password)
+        public static List<StaffClass> Login(string username, string password)
         {
-            List<StaffClass> results = StaffDAL.LoginStaff(Username, Password);
+            List<StaffClass> results = StaffDal.LoginStaff(username, password);
 
             return results;
         }
 
-        public static bool RegisterStaff(string Username, string Password, string Fullname, int Permission)
+        public static bool RegisterStaff(string username, string password, string fullname, int permission)
         {
-            int status = StaffDAL.CreateStaff(Username, Password, Fullname, Permission);
+            int status = StaffDal.CreateStaff(username, password, fullname, permission);
 
             return status == 1;
         }

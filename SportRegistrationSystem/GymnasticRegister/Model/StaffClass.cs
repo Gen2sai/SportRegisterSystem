@@ -2,7 +2,7 @@
 {
     public class StaffClass
     {
-        public int StaffID { get; set; }
+        public int StaffId { get; set; }
 
         public string Username { get; set; }
 
@@ -10,6 +10,6 @@
 
         public string Fullname { get; set; }
 
-        public int PermissionID { get; set; }
+        public int PermissionId { get; set; }
     }
 }
