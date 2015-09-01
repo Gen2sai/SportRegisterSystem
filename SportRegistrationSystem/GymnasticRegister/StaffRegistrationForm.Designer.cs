@@ -1,11 +1,14 @@
-﻿namespace GymnasticRegister
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace GymnasticRegister
 {
     partial class StaffRegistrationForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -151,15 +154,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblFullName;
-        private System.Windows.Forms.Label lblPermission;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtFullName;
-        private System.Windows.Forms.ComboBox cbPermission;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnRegister;
+        private Label lblUsername;
+        private Label lblPassword;
+        private Label lblFullName;
+        private Label lblPermission;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
+        private TextBox txtFullName;
+        private ComboBox cbPermission;
+        private Button btnCancel;
+        private Button btnRegister;
     }
 }

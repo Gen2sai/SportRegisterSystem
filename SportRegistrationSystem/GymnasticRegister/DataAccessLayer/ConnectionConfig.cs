@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 
 namespace GymnasticRegister.DataAccessLayer
 {
@@ -10,7 +6,7 @@ namespace GymnasticRegister.DataAccessLayer
     {
         public static string GetConnectionString()
         {
-            return System.Configuration.ConfigurationManager.ConnectionStrings["DBConn"].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["DBConn"].ConnectionString;
         }
     }
 }

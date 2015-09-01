@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GymnasticRegister.Model
+﻿namespace GymnasticRegister.Model
 {
     class StaffClass
     {
