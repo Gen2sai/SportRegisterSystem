@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using GymnasticRegister.DataAccessLayer;
+using GymnasticRegister.Enum;
 using GymnasticRegister.Model;
 
 namespace GymnasticRegister.BusinessLogicLayer
@@ -18,11 +19,11 @@ namespace GymnasticRegister.BusinessLogicLayer
             return results.Count > 0;
         }
 
-        public bool RegisterStaff(string Username, string Password, string Fullname, int Permission)
+        public static bool RegisterStaff(string Username, string Password, string Fullname, int Permission)
         {
             int status = StaffDAL.CreateStaff(Username, Password, Fullname, Permission);
 
-            return status != 0;
+            return status == 1;
         }
     }
 }

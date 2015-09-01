@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GymnasticRegister.DataAccessLayer;
+using GymnasticRegister.Enum;
 using GymnasticRegister.Helper;
 using GymnasticRegister.Model;
 
@@ -64,11 +65,11 @@ namespace GymnasticRegister.DataAccessLayer
 
                 cmd =
                     new SqlCommand(
-                        "INSERT INTO Staff (Username, Password, FullName, PermissionID) VALUES (@Username, @Password, @FullName, @PermissionID)", conn);
+                        "IF(NOT EXISTS(SELECT Username FROM Staff WHERE Username = @Username)) BEGIN INSERT INTO Staff (Username, Password, FullName, PermissionID) VALUES (@Username, @Password, @FullName, @PermissionID) END", conn);
                 cmd.Parameters.AddWithValue("@Username", Username);
                 cmd.Parameters.AddWithValue("@Password", Password);
                 cmd.Parameters.AddWithValue("@Fullname", Fullname);
-                cmd.Parameters.AddWithValue("@Permission", Permission);
+                cmd.Parameters.AddWithValue("@PermissionID", Permission);
 
                 conn.Open();
                 status = cmd.ExecuteNonQuery();
