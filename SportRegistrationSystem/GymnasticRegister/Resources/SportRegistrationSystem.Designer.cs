@@ -61,6 +61,24 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Student.
+        /// </summary>
+        internal static string lblAddStudent {
+            get {
+                return ResourceManager.GetString("lblAddStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Age :.
+        /// </summary>
+        internal static string lblAge {
+            get {
+                return ResourceManager.GetString("lblAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string lblCancel {
@@ -70,11 +88,29 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact Number :.
+        /// </summary>
+        internal static string lblContactNumber {
+            get {
+                return ResourceManager.GetString("lblContactNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FullName :.
         /// </summary>
         internal static string lblFullName {
             get {
                 return ResourceManager.GetString("lblFullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grade :.
+        /// </summary>
+        internal static string lblGrade {
+            get {
+                return ResourceManager.GetString("lblGrade", resourceCulture);
             }
         }
         
@@ -174,6 +210,42 @@ namespace GymnasticRegister.Resources {
         internal static string lblRegisterSuccess {
             get {
                 return ResourceManager.GetString("lblRegisterSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Staff Management.
+        /// </summary>
+        internal static string lblStaffManagement {
+            get {
+                return ResourceManager.GetString("lblStaffManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student Management.
+        /// </summary>
+        internal static string lblStudentManagement {
+            get {
+                return ResourceManager.GetString("lblStudentManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student Name :.
+        /// </summary>
+        internal static string lblStudentName {
+            get {
+                return ResourceManager.GetString("lblStudentName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        internal static string lblSubmit {
+            get {
+                return ResourceManager.GetString("lblSubmit", resourceCulture);
             }
         }
         
