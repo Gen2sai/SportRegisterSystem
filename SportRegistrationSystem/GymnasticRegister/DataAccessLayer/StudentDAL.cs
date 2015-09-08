@@ -27,6 +27,8 @@ namespace GymnasticRegister.DataAccessLayer
                 conn.Open();
                 status = cmd.ExecuteNonQuery();
                 conn.Close();
+
+                return status;
             }
             catch (Exception ex)
             {
