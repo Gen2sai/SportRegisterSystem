@@ -49,10 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogicLayer\StaffBLL.cs" />
+    <Compile Include="BusinessLogicLayer\StudentBLL.cs" />
     <Compile Include="DataAccessLayer\ConnectionConfig.cs" />
     <Compile Include="DataAccessLayer\StaffDAL.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataAccessLayer\StudentDAL.cs" />
     <Compile Include="Enum\GradeEnum.cs" />
     <Compile Include="Enum\PermissionEnum.cs" />
     <Compile Include="Forms\StudentRegistrationForm.cs">
