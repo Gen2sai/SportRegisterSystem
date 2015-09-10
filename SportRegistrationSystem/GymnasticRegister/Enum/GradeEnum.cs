@@ -2,7 +2,7 @@
 {
     public enum GradeEnum
     {
-        Special = 0,
+        
         One = 1,
         Two = 2,
         Three = 3,
@@ -15,6 +15,7 @@
         Ten = 10,
         Bronze = 11,
         Silver = 12,
-        Gold = 13
+        Gold = 13,
+        Special = 14
     }
 }

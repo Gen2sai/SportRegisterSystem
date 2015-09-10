@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GymnasticRegister.BusinessLogicLayer;
 using GymnasticRegister.Enum;
 using GymnasticRegister.Helper;
 using GymnasticRegister.Resources;
@@ -41,10 +35,21 @@ namespace GymnasticRegister.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            StudentForm form = new StudentForm(username, permission);
             if (!Authenticate.Authentication(username, permission)) return;
             if (txtStudentName != null)
             {
-                //do insert operation
+                bool registrationStatus = StudentBLL.RegisterStudent(txtStudentName.Text,
+                    (int) System.Enum.Parse(typeof (GradeEnum), cbGrade.SelectedValue.ToString()),
+                    Convert.ToInt32(txtAge.Text), Convert.ToInt32(txtContactNumber.Text), username);
+                MessageBox.Show(registrationStatus
+                    ? SportRegistrationSystem.lblRegisterSuccess
+                    : SportRegistrationSystem.lblRegisterFailed);
+                if (registrationStatus)
+                {
+                    form.Show();
+                    this.Dispose();
+                }
             }
         }
     }

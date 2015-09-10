@@ -1,11 +1,14 @@
-﻿namespace GymnasticRegister.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace GymnasticRegister.Forms
 {
     partial class StudentRegistrationForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -149,15 +152,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblStudentName;
-        private System.Windows.Forms.Label lblGrade;
-        private System.Windows.Forms.Label lblAge;
-        private System.Windows.Forms.Label lblContactNumber;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtStudentName;
-        private System.Windows.Forms.TextBox txtAge;
-        private System.Windows.Forms.TextBox txtContactNumber;
-        private System.Windows.Forms.ComboBox cbGrade;
+        private Label lblStudentName;
+        private Label lblGrade;
+        private Label lblAge;
+        private Label lblContactNumber;
+        private Button btnSubmit;
+        private Button btnCancel;
+        private TextBox txtStudentName;
+        private TextBox txtAge;
+        private TextBox txtContactNumber;
+        private ComboBox cbGrade;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,12 @@ namespace GymnasticRegister.BusinessLogicLayer
         {
             int status = StudentDAL.CreateStudent(studentName, grade, age, contactNumber, username);
             return status == 1;
+        }
+
+        public static DataTable LoadStudent()
+        {
+            DataTable dt = StudentDAL.LoadStudent();
+            return dt;
         }
     }
 }

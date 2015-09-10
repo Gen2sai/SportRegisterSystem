@@ -88,6 +88,15 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check Payment.
+        /// </summary>
+        internal static string lblCheckPayment {
+            get {
+                return ResourceManager.GetString("lblCheckPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Number :.
         /// </summary>
         internal static string lblContactNumber {
