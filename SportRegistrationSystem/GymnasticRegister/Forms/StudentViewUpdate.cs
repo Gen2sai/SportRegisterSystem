@@ -14,11 +14,11 @@ namespace GymnasticRegister.Forms
 {
     public partial class StudentViewUpdate : Form
     {
-        private readonly string passedUsername;
+        private readonly int StaffId;
         private readonly int passedPermission;
-        public StudentViewUpdate(string username, int permission)
+        public StudentViewUpdate(int username, int permission)
         {
-            passedUsername = username;
+            StaffId = username;
             passedPermission = permission;
             InitializeComponent();
             DataTable dt = StudentBLL.LoadStudent();
@@ -28,7 +28,7 @@ namespace GymnasticRegister.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(passedUsername, passedPermission);
+            StudentForm form = new StudentForm(StaffId, passedPermission);
             form.Show();
             this.Close();
         }

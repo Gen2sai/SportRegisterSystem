@@ -9,13 +9,13 @@ namespace GymnasticRegister.Forms
 {
     public partial class StudentRegistrationForm : Form
     {
-        private string username;
+        private int StaffId;
         private int permission;
 
-        public StudentRegistrationForm(string passedUsername, int passedPermission)
+        public StudentRegistrationForm(int passedUsername, int passedPermission)
         {
             InitializeComponent();
-            username = passedUsername;
+            StaffId = passedUsername;
             permission = passedPermission;
             lblStudentName.Text = SportRegistrationSystem.lblStudentName;
             lblGrade.Text = SportRegistrationSystem.lblGrade;
@@ -28,20 +28,20 @@ namespace GymnasticRegister.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(username, permission);
+            StudentForm form = new StudentForm(StaffId, permission);
             form.Show();
             this.Dispose();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(username, permission);
-            if (!Authenticate.Authentication(username, permission)) return;
+            StudentForm form = new StudentForm(StaffId, permission);
+            if (!Authenticate.Authentication(StaffId, permission)) return;
             if (txtStudentName != null)
             {
                 bool registrationStatus = StudentBLL.RegisterStudent(txtStudentName.Text,
                     (int) System.Enum.Parse(typeof (GradeEnum), cbGrade.SelectedValue.ToString()),
-                    Convert.ToInt32(txtAge.Text), Convert.ToInt32(txtContactNumber.Text), username);
+                    Convert.ToInt32(txtAge.Text), Convert.ToInt32(txtContactNumber.Text), StaffId);
                 MessageBox.Show(registrationStatus
                     ? SportRegistrationSystem.lblRegisterSuccess
                     : SportRegistrationSystem.lblRegisterFailed);

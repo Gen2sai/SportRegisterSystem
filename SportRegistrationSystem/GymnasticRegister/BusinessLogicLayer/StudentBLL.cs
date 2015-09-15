@@ -10,7 +10,7 @@ namespace GymnasticRegister.BusinessLogicLayer
 {
     internal class StudentBLL
     {
-        public static bool RegisterStudent(string studentName, int grade, int age, int contactNumber, string username)
+        public static bool RegisterStudent(string studentName, int grade, int age, int contactNumber, int username)
         {
             int status = StudentDAL.CreateStudent(studentName, grade, age, contactNumber, username);
             return status == 1;
@@ -32,6 +32,12 @@ namespace GymnasticRegister.BusinessLogicLayer
         {
             List<string> studentNameList = (from DataRow row in dt.Rows select row.Field<string>(1)).ToList();
             return studentNameList;
+        }
+
+        public static int MakePayment(int studentID, float payableAmt, DateTime date, int StaffId, string remark)
+        {
+            int result = StudentDAL.MakePayment(studentID, payableAmt, date, StaffId, remark);
+            return result;
         }
     }
 }

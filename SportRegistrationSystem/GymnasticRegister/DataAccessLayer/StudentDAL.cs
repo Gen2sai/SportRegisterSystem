@@ -7,7 +7,7 @@ namespace GymnasticRegister.DataAccessLayer
 {
     internal class StudentDAL
     {
-        public static int CreateStudent(string studentName, int grade, int age, int contactNumber, string username)
+        public static int CreateStudent(string studentName, int grade, int age, int contactNumber, int StaffId)
         {
             try
             {
@@ -17,13 +17,13 @@ namespace GymnasticRegister.DataAccessLayer
 
                 cmd =
                     new SqlCommand(
-                        "IF(NOT EXISTS(SELECT StudentID FROM Student WHERE StudentName = @studentName AND GradeID = @grade AND Age = @age)) BEGIN INSERT INTO STUDENT (StudentName, GradeID, Age, ContactNumber, CreatedBy) VALUES (@studentName, @grade, @age, @contactNumber, (SELECT StaffID from Staff WHERE Username = @username)) END",
+                        "IF(NOT EXISTS(SELECT StudentID FROM Student WHERE StudentName = @studentName AND GradeID = @grade AND Age = @age)) BEGIN INSERT INTO STUDENT (StudentName, GradeID, Age, ContactNumber, CreatedBy) VALUES (@studentName, @grade, @age, @contactNumber, @staffId) END",
                         conn);
                 cmd.Parameters.AddWithValue("@studentName", studentName);
                 cmd.Parameters.AddWithValue("@grade", grade);
                 cmd.Parameters.AddWithValue("@age", age);
                 cmd.Parameters.AddWithValue("@contactNumber", contactNumber);
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@staffId", StaffId);
 
                 conn.Open();
                 status = cmd.ExecuteNonQuery();
@@ -89,6 +89,34 @@ namespace GymnasticRegister.DataAccessLayer
             {
                ErrorLog.LogError(ex);
                 return null;
+            }
+        }
+
+        public static int MakePayment(int studentID, float payableAmt, DateTime date, int StaffId, string remark)
+        {
+            try
+            {
+                int result;
+                SqlConnection conn = new SqlConnection(ConnectionConfig.GetConnectionString());
+                SqlCommand cmd;
+
+                cmd = new SqlCommand("INSERT INTO Payment (StudentID, PaidAmount, PaymentDate, ReceivedBy, Remark) VALUES (@studentID, @payableAmt, @date, @StaffID, @remark)", conn);
+                cmd.Parameters.AddWithValue("@studentID", studentID);
+                cmd.Parameters.AddWithValue("@payableAmt", payableAmt);
+                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@StaffID", StaffId);
+                cmd.Parameters.AddWithValue("@remark", remark);
+
+                conn.Open();
+                result = cmd.ExecuteNonQuery();
+                conn.Close();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.LogError(ex);
+                return 0;
             }
         }
     }

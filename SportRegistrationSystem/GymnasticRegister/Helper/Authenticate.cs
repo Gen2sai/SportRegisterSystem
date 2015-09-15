@@ -9,9 +9,9 @@ namespace GymnasticRegister.Helper
 {
     class Authenticate
     {
-        public static bool Authentication(string username, int permission)
+        public static bool Authentication(int StaffId, int permission)
         {
-            return permission == (int)PermissionEnum.Admin || permission == (int)PermissionEnum.Staff && username != null;
+            return permission == (int)PermissionEnum.Admin || permission == (int)PermissionEnum.Staff && StaffId != null;
         }
     }
 }

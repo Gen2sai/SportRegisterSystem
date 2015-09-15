@@ -8,7 +8,7 @@ namespace GymnasticRegister.Forms
 {
     public partial class MainMenuForm : Form
     {
-        private string username;
+        private int StaffId;
         private int permission;
 
         public MainMenuForm(List<StaffClass> loginStatus)
@@ -16,7 +16,7 @@ namespace GymnasticRegister.Forms
             InitializeComponent();
             btnStaffManagement.Text = SportRegistrationSystem.lblStaffManagement;
             btnStudentManagement.Text = SportRegistrationSystem.lblStudentManagement;
-            username = loginStatus[0].Username;
+            StaffId = loginStatus[0].StaffId;
             permission = loginStatus[0].PermissionId;
         }
 
@@ -32,7 +32,7 @@ namespace GymnasticRegister.Forms
 
         private void btnStudentManagement_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(username, permission);
+            StudentForm form = new StudentForm(StaffId, permission);
             form.Show();
             this.Hide();
         }
