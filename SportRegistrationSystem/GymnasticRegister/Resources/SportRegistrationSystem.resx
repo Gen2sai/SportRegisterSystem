@@ -123,6 +123,9 @@
   <data name="lblAge" xml:space="preserve">
     <value>Age :</value>
   </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
   <data name="lblCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="lblContactNumber" xml:space="preserve">
     <value>Contact Number :</value>
+  </data>
+  <data name="lblDate" xml:space="preserve">
+    <value>Date :</value>
   </data>
   <data name="lblFullName" xml:space="preserve">
     <value>FullName :</value>
@@ -150,14 +156,26 @@
   <data name="lblInvalidUsername" xml:space="preserve">
     <value>Invalid Username</value>
   </data>
+  <data name="lblLastPaid" xml:space="preserve">
+    <value>Last Paid :</value>
+  </data>
   <data name="lblLogin" xml:space="preserve">
     <value>Login</value>
   </data>
   <data name="lblLoginFailed" xml:space="preserve">
     <value>Login Failed</value>
   </data>
+  <data name="lblNoLastPayment" xml:space="preserve">
+    <value>No Last Payment</value>
+  </data>
   <data name="lblPassword" xml:space="preserve">
     <value>Password :</value>
+  </data>
+  <data name="lblPayableAmt" xml:space="preserve">
+    <value>Payable Amount :</value>
+  </data>
+  <data name="lblPayment" xml:space="preserve">
+    <value>Payment</value>
   </data>
   <data name="lblPermission" xml:space="preserve">
     <value>Permission :</value>
@@ -170,6 +188,9 @@
   </data>
   <data name="lblRegisterSuccess" xml:space="preserve">
     <value>Registration Successful</value>
+  </data>
+  <data name="lblRemark" xml:space="preserve">
+    <value>Remark :</value>
   </data>
   <data name="lblStaffManagement" xml:space="preserve">
     <value>Staff Management</value>

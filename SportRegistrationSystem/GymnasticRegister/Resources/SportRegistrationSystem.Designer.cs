@@ -79,6 +79,15 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string lblBack {
+            get {
+                return ResourceManager.GetString("lblBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string lblCancel {
@@ -102,6 +111,15 @@ namespace GymnasticRegister.Resources {
         internal static string lblContactNumber {
             get {
                 return ResourceManager.GetString("lblContactNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date :.
+        /// </summary>
+        internal static string lblDate {
+            get {
+                return ResourceManager.GetString("lblDate", resourceCulture);
             }
         }
         
@@ -160,6 +178,15 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Paid :.
+        /// </summary>
+        internal static string lblLastPaid {
+            get {
+                return ResourceManager.GetString("lblLastPaid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string lblLogin {
@@ -178,11 +205,38 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Last Payment.
+        /// </summary>
+        internal static string lblNoLastPayment {
+            get {
+                return ResourceManager.GetString("lblNoLastPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password :.
         /// </summary>
         internal static string lblPassword {
             get {
                 return ResourceManager.GetString("lblPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payable Amount :.
+        /// </summary>
+        internal static string lblPayableAmt {
+            get {
+                return ResourceManager.GetString("lblPayableAmt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment.
+        /// </summary>
+        internal static string lblPayment {
+            get {
+                return ResourceManager.GetString("lblPayment", resourceCulture);
             }
         }
         
@@ -219,6 +273,15 @@ namespace GymnasticRegister.Resources {
         internal static string lblRegisterSuccess {
             get {
                 return ResourceManager.GetString("lblRegisterSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remark :.
+        /// </summary>
+        internal static string lblRemark {
+            get {
+                return ResourceManager.GetString("lblRemark", resourceCulture);
             }
         }
         

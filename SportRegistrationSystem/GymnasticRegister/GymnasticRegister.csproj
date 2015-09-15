@@ -57,6 +57,12 @@
     <Compile Include="DataAccessLayer\StudentDAL.cs" />
     <Compile Include="Enum\GradeEnum.cs" />
     <Compile Include="Enum\PermissionEnum.cs" />
+    <Compile Include="Forms\StudentPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentPayment.Designer.cs">
+      <DependentUpon>StudentPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="Forms\StaffRegistrationForm.Designer.cs">
       <DependentUpon>StaffRegistrationForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\StudentPayment.resx">
+      <DependentUpon>StudentPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentRegistrationForm.resx">
       <DependentUpon>StudentRegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
