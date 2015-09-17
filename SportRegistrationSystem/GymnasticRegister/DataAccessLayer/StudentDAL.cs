@@ -119,5 +119,33 @@ namespace GymnasticRegister.DataAccessLayer
                 return 0;
             }
         }
+
+        public static DataTable GetLatePaymentByMonth(DateTime date)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConnectionConfig.GetConnectionString());
+                SqlCommand cmd;
+                SqlDataAdapter da;
+                DataTable dt = new DataTable();
+                DateTime endDate = DateTime.Now.AddMonths(-1);
+
+                cmd = new SqlCommand("SELECT s.StudentID, s.StudentName, p.PaymentDate FROM Student AS s INNER JOIN Payment AS p ON s.StudentID = p.StudentID  WHERE s.StudentID NOT in (SELECT DISTINCT s.StudentID FROM Payment AS p INNER JOIN Student AS s ON s.StudentID = p.StudentID WHERE p.PaymentDate <= Convert(date, @endDate) AND PaymentDate >= Convert(date, @startDate))ORDER BY p.PaymentDate DESC", conn);
+                cmd.Parameters.AddWithValue("@startDate", date.Date);
+                cmd.Parameters.AddWithValue("@endDate", endDate.Date);
+
+                conn.Open();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.LogError(ex);
+                return null;
+            }
+        }
     }
 }

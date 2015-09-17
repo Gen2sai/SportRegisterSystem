@@ -1,6 +1,6 @@
 ﻿namespace GymnasticRegister.Forms
 {
-    partial class StudentPayment
+    partial class StudentPaymentForm
     {
         /// <summary>
         /// Required designer variable.

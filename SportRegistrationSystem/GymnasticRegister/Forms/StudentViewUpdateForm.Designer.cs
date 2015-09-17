@@ -1,6 +1,6 @@
 ﻿namespace GymnasticRegister.Forms
 {
-    partial class StudentViewUpdate
+    partial class StudentViewUpdateForm
     {
         /// <summary>
         /// Required designer variable.

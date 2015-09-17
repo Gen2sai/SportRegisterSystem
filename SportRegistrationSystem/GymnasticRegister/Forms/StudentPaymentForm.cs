@@ -15,13 +15,13 @@ using GymnasticRegister.Resources;
 
 namespace GymnasticRegister.Forms
 {
-    public partial class StudentPayment : Form
+    public partial class StudentPaymentForm : Form
     {
         private const string dateFormat = "MMM/yyyy";
         private readonly int StaffId;
         private readonly int passedPermission;
         private int tempStudentID;
-        public StudentPayment(int username, int permission)
+        public StudentPaymentForm(int username, int permission)
         {
             InitializeComponent();
             StaffId = username;

@@ -12,11 +12,11 @@ using GymnasticRegister.Resources;
 
 namespace GymnasticRegister.Forms
 {
-    public partial class StudentViewUpdate : Form
+    public partial class StudentViewUpdateForm : Form
     {
         private readonly int StaffId;
         private readonly int passedPermission;
-        public StudentViewUpdate(int username, int permission)
+        public StudentViewUpdateForm(int username, int permission)
         {
             StaffId = username;
             passedPermission = permission;

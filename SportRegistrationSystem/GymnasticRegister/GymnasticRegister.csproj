@@ -57,11 +57,17 @@
     <Compile Include="DataAccessLayer\StudentDAL.cs" />
     <Compile Include="Enum\GradeEnum.cs" />
     <Compile Include="Enum\PermissionEnum.cs" />
-    <Compile Include="Forms\StudentPayment.cs">
+    <Compile Include="Forms\StudentCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StudentPayment.Designer.cs">
-      <DependentUpon>StudentPayment.cs</DependentUpon>
+    <Compile Include="Forms\StudentCheckForm.Designer.cs">
+      <DependentUpon>StudentCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentPaymentForm.Designer.cs">
+      <DependentUpon>StudentPaymentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentRegistrationForm.cs">
       <SubType>Form</SubType>
@@ -81,11 +87,11 @@
     <Compile Include="Forms\StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentViewUpdate.cs">
+    <Compile Include="Forms\StudentViewUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StudentViewUpdate.Designer.cs">
-      <DependentUpon>StudentViewUpdate.cs</DependentUpon>
+    <Compile Include="Forms\StudentViewUpdateForm.Designer.cs">
+      <DependentUpon>StudentViewUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Authenticate.cs" />
     <Compile Include="Helper\ErrorLog.cs" />
@@ -110,8 +116,11 @@
     <Compile Include="Forms\StaffRegistrationForm.Designer.cs">
       <DependentUpon>StaffRegistrationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\StudentPayment.resx">
-      <DependentUpon>StudentPayment.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\StudentCheckForm.resx">
+      <DependentUpon>StudentCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentPaymentForm.resx">
+      <DependentUpon>StudentPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentRegistrationForm.resx">
       <DependentUpon>StudentRegistrationForm.cs</DependentUpon>
@@ -125,8 +134,8 @@
     <EmbeddedResource Include="Forms\StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViewUpdate.resx">
-      <DependentUpon>StudentViewUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\StudentViewUpdateForm.resx">
+      <DependentUpon>StudentViewUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

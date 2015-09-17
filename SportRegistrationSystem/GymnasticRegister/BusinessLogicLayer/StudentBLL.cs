@@ -39,5 +39,12 @@ namespace GymnasticRegister.BusinessLogicLayer
             int result = StudentDAL.MakePayment(studentID, payableAmt, date, StaffId, remark);
             return result;
         }
+
+        public static DataTable GetLatePaymentByMonth()
+        {
+            DateTime date = DateTime.Now.AddMonths(-3);
+            DataTable dt = StudentDAL.GetLatePaymentByMonth(date);
+            return dt;
+        }
     }
 }
