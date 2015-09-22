@@ -37,12 +37,14 @@ namespace GymnasticRegister
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 90);
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -51,7 +53,7 @@ namespace GymnasticRegister
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 122);
+            this.label2.Location = new System.Drawing.Point(6, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 0;
@@ -59,22 +61,23 @@ namespace GymnasticRegister
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(115, 83);
+            this.txtUsername.Location = new System.Drawing.Point(103, 9);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.Size = new System.Drawing.Size(136, 20);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(115, 115);
+            this.txtPassword.Location = new System.Drawing.Point(103, 35);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(136, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(197, 226);
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogin.Location = new System.Drawing.Point(167, 60);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 3;
@@ -84,7 +87,8 @@ namespace GymnasticRegister
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(115, 226);
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.Location = new System.Drawing.Point(86, 60);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 4;
@@ -92,22 +96,36 @@ namespace GymnasticRegister
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnRegister);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnLogin);
+            this.groupBox1.Controls.Add(this.txtUsername);
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(248, 89);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(272, 113);
+            this.Controls.Add(this.groupBox1);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -119,5 +137,6 @@ namespace GymnasticRegister
         private TextBox txtPassword;
         private Button btnLogin;
         private Button btnRegister;
+        private GroupBox groupBox1;
     }
 }

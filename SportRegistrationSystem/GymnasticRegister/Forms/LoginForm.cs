@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using GymnasticRegister.BusinessLogicLayer;
@@ -14,11 +15,14 @@ namespace GymnasticRegister
         public LoginForm()
         {
             InitializeComponent();
-            
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            groupBox1.Text = SportRegistrationSystem.lblLogin;
             label1.Text = SportRegistrationSystem.lblUsername;
             label2.Text = SportRegistrationSystem.lblPassword;
             btnLogin.Text = SportRegistrationSystem.lblLogin;
