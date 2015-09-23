@@ -151,7 +151,6 @@
     </Content>
     <EmbeddedResource Include="Resources\SportRegistrationSystem.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SportRegistrationSystem.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StaffRegistrationForm.resx">
       <DependentUpon>StaffRegistrationForm.cs</DependentUpon>

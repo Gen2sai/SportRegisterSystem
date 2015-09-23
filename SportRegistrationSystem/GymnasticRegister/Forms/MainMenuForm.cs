@@ -16,6 +16,8 @@ namespace GymnasticRegister.Forms
             InitializeComponent();
             btnStaffManagement.Text = SportRegistrationSystem.lblStaffManagement;
             btnStudentManagement.Text = SportRegistrationSystem.lblStudentManagement;
+            btnRegister.Text = SportRegistrationSystem.lblRegister;
+            btnLogout.Text = SportRegistrationSystem.lblLogout;
             StaffId = loginStatus[0].StaffId;
             permission = loginStatus[0].PermissionId;
         }
@@ -33,6 +35,20 @@ namespace GymnasticRegister.Forms
         private void btnStudentManagement_Click(object sender, EventArgs e)
         {
             StudentForm form = new StudentForm(StaffId, permission);
+            form.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginForm form = new LoginForm();
+            form.Show();
+            this.Close();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            StaffRegistrationForm form = new StaffRegistrationForm();
             form.Show();
             this.Hide();
         }

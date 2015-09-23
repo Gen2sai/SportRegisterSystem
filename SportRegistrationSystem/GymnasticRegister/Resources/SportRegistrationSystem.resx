@@ -165,6 +165,9 @@
   <data name="lblLoginFailed" xml:space="preserve">
     <value>Login Failed</value>
   </data>
+  <data name="lblLogout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
   <data name="lblNoLastPayment" xml:space="preserve">
     <value>No Last Payment</value>
   </data>
