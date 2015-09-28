@@ -21,6 +21,7 @@ namespace GymnasticRegister.Forms
         private readonly int StaffId;
         private readonly int passedPermission;
         private int tempStudentID;
+
         public StudentPaymentForm(int username, int permission)
         {
             InitializeComponent();
@@ -44,9 +45,26 @@ namespace GymnasticRegister.Forms
                 cbStudentName.Items.Add(student);
             }
             cbStudentName.SelectedIndex = 0;
-
         }
 
+        public StudentPaymentForm(int username, int permission, string studentName)
+        {
+            InitializeComponent();
+            StaffId = username;
+            passedPermission = permission;
+            lblStudentName.Text = SportRegistrationSystem.lblStudentName;
+            lblGrade.Text = SportRegistrationSystem.lblGrade;
+            lblAge.Text = SportRegistrationSystem.lblAge;
+            lblPayableAmt.Text = SportRegistrationSystem.lblPayableAmt;
+            lblDate.Text = SportRegistrationSystem.lblDate;
+            lblLastPaid.Text = SportRegistrationSystem.lblLastPaid;
+            lblRemark.Text = SportRegistrationSystem.lblRemark;
+            dtpDate.CustomFormat = dateFormat;
+            dtpDate.Format = DateTimePickerFormat.Custom;
+            btnSubmit.Text = SportRegistrationSystem.lblSubmit;
+            btnCancel.Text = SportRegistrationSystem.lblCancel;
+            //handle the passsed in studentname and populate it(not done).
+        }
         private void txtPayableAmt_KeyPresss(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&

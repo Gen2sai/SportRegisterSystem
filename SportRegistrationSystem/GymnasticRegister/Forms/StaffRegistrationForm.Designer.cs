@@ -41,12 +41,14 @@ namespace GymnasticRegister
             this.cbPermission = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(33, 56);
+            this.lblUsername.Location = new System.Drawing.Point(6, 16);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(35, 13);
             this.lblUsername.TabIndex = 0;
@@ -55,7 +57,7 @@ namespace GymnasticRegister
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(33, 85);
+            this.lblPassword.Location = new System.Drawing.Point(6, 42);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(35, 13);
             this.lblPassword.TabIndex = 1;
@@ -64,7 +66,7 @@ namespace GymnasticRegister
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
-            this.lblFullName.Location = new System.Drawing.Point(33, 114);
+            this.lblFullName.Location = new System.Drawing.Point(6, 68);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(35, 13);
             this.lblFullName.TabIndex = 2;
@@ -73,7 +75,7 @@ namespace GymnasticRegister
             // lblPermission
             // 
             this.lblPermission.AutoSize = true;
-            this.lblPermission.Location = new System.Drawing.Point(33, 143);
+            this.lblPermission.Location = new System.Drawing.Point(6, 94);
             this.lblPermission.Name = "lblPermission";
             this.lblPermission.Size = new System.Drawing.Size(35, 13);
             this.lblPermission.TabIndex = 3;
@@ -81,37 +83,37 @@ namespace GymnasticRegister
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(121, 48);
+            this.txtUsername.Location = new System.Drawing.Point(74, 13);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.Size = new System.Drawing.Size(120, 20);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(121, 79);
+            this.txtPassword.Location = new System.Drawing.Point(74, 39);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(120, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(121, 110);
+            this.txtFullName.Location = new System.Drawing.Point(74, 65);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(100, 20);
+            this.txtFullName.Size = new System.Drawing.Size(120, 20);
             this.txtFullName.TabIndex = 3;
             // 
             // cbPermission
             // 
             this.cbPermission.FormattingEnabled = true;
-            this.cbPermission.Location = new System.Drawing.Point(121, 143);
+            this.cbPermission.Location = new System.Drawing.Point(74, 91);
             this.cbPermission.Name = "cbPermission";
             this.cbPermission.Size = new System.Drawing.Size(121, 21);
             this.cbPermission.TabIndex = 4;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(197, 226);
+            this.btnCancel.Location = new System.Drawing.Point(119, 139);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
@@ -121,7 +123,7 @@ namespace GymnasticRegister
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(116, 226);
+            this.btnRegister.Location = new System.Drawing.Point(38, 139);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 5;
@@ -129,26 +131,37 @@ namespace GymnasticRegister
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblUsername);
+            this.groupBox1.Controls.Add(this.btnRegister);
+            this.groupBox1.Controls.Add(this.lblPassword);
+            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Controls.Add(this.lblFullName);
+            this.groupBox1.Controls.Add(this.cbPermission);
+            this.groupBox1.Controls.Add(this.lblPermission);
+            this.groupBox1.Controls.Add(this.txtFullName);
+            this.groupBox1.Controls.Add(this.txtUsername);
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 168);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Staff Registation";
+            // 
             // StaffRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.cbPermission);
-            this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.lblPermission);
-            this.Controls.Add(this.lblFullName);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUsername);
+            this.ClientSize = new System.Drawing.Size(223, 193);
+            this.Controls.Add(this.groupBox1);
             this.Name = "StaffRegistrationForm";
             this.Text = "StaffRegistrationForm";
             this.Load += new System.EventHandler(this.StaffRegistrationForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -164,5 +177,6 @@ namespace GymnasticRegister
         private ComboBox cbPermission;
         private Button btnCancel;
         private Button btnRegister;
+        private GroupBox groupBox1;
     }
 }

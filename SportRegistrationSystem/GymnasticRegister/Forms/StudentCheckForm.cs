@@ -22,6 +22,9 @@ namespace GymnasticRegister.Forms
             staffId = staffID;
             passedPermission = permission;
             lblStudent.Text = SportRegistrationSystem.lblStudentName;
+            lblDesc.Text = SportRegistrationSystem.lblCheckFormDesc;
+            btnCancel.Text = SportRegistrationSystem.lblCancel;
+            btnSubmit.Text = SportRegistrationSystem.lblSubmit;
             DataTable dt = StudentBLL.GetLatePaymentByMonth();
             if (dt != null)
             {
@@ -36,6 +39,12 @@ namespace GymnasticRegister.Forms
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
+            if (cbStudent.Items.Count != 0)
+            {
+                StudentPaymentForm form = new StudentPaymentForm(staffId, passedPermission, cbStudent.Text);
+                form.Show();
+                this.Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

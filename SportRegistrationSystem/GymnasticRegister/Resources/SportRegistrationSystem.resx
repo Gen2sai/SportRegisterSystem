@@ -129,6 +129,9 @@
   <data name="lblCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="lblCheckFormDesc" xml:space="preserve">
+    <value>Checks for students who has not paid their fees ranging from 3 months since current date till current date.</value>
+  </data>
   <data name="lblCheckPayment" xml:space="preserve">
     <value>Check Payment</value>
   </data>

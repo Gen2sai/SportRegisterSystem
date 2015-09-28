@@ -32,20 +32,23 @@
             this.lblStudent = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbStudent
             // 
             this.cbStudent.FormattingEnabled = true;
-            this.cbStudent.Location = new System.Drawing.Point(112, 45);
+            this.cbStudent.Location = new System.Drawing.Point(136, 61);
             this.cbStudent.Name = "cbStudent";
-            this.cbStudent.Size = new System.Drawing.Size(121, 21);
+            this.cbStudent.Size = new System.Drawing.Size(170, 21);
             this.cbStudent.TabIndex = 0;
             // 
             // lblStudent
             // 
             this.lblStudent.AutoSize = true;
-            this.lblStudent.Location = new System.Drawing.Point(53, 45);
+            this.lblStudent.Location = new System.Drawing.Point(16, 64);
             this.lblStudent.Name = "lblStudent";
             this.lblStudent.Size = new System.Drawing.Size(35, 13);
             this.lblStudent.TabIndex = 1;
@@ -53,7 +56,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(197, 226);
+            this.btnSubmit.Location = new System.Drawing.Point(231, 104);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 2;
@@ -63,7 +66,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(112, 226);
+            this.btnCancel.Location = new System.Drawing.Point(150, 104);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -71,19 +74,41 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblDesc);
+            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Controls.Add(this.cbStudent);
+            this.groupBox1.Controls.Add(this.btnSubmit);
+            this.groupBox1.Controls.Add(this.lblStudent);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(306, 133);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Location = new System.Drawing.Point(16, 16);
+            this.lblDesc.MaximumSize = new System.Drawing.Size(290, 133);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(35, 13);
+            this.lblDesc.TabIndex = 5;
+            this.lblDesc.Text = "label1";
+            // 
             // StudentCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.lblStudent);
-            this.Controls.Add(this.cbStudent);
+            this.ClientSize = new System.Drawing.Size(330, 157);
+            this.Controls.Add(this.groupBox1);
             this.Name = "StudentCheckForm";
             this.Text = "StudentCheck";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -93,5 +118,7 @@
         private System.Windows.Forms.Label lblStudent;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblDesc;
     }
 }

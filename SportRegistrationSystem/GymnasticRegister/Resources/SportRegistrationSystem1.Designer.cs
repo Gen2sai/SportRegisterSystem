@@ -97,6 +97,15 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checks for students who has not paid their fees ranging from 3 months since current date till current date..
+        /// </summary>
+        internal static string lblCheckFormDesc {
+            get {
+                return ResourceManager.GetString("lblCheckFormDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check Payment.
         /// </summary>
         internal static string lblCheckPayment {
