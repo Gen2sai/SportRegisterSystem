@@ -56,6 +56,13 @@ namespace GymnasticRegister
                         MessageBox.Show(registrationStatus
                             ? SportRegistrationSystem.lblRegisterSuccess
                             : SportRegistrationSystem.lblRegisterFailed);
+                        if (registrationStatus)
+                        {
+                            LoginForm form = new LoginForm();
+                            form.Show();
+                            this.Close();
+
+                        }
                     }
                 }
             }
