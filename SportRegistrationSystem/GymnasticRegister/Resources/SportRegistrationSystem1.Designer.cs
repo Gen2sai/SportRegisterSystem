@@ -115,6 +115,15 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Students Cleared Payment Check.
+        /// </summary>
+        internal static string lblClearedPayment {
+            get {
+                return ResourceManager.GetString("lblClearedPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Number :.
         /// </summary>
         internal static string lblContactNumber {
@@ -255,6 +264,24 @@ namespace GymnasticRegister.Resources {
         internal static string lblPayment {
             get {
                 return ResourceManager.GetString("lblPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment failed..
+        /// </summary>
+        internal static string lblPaymentFailed {
+            get {
+                return ResourceManager.GetString("lblPaymentFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment has been successfully made..
+        /// </summary>
+        internal static string lblPaymentSuccess {
+            get {
+                return ResourceManager.GetString("lblPaymentSuccess", resourceCulture);
             }
         }
         

@@ -63,7 +63,13 @@ namespace GymnasticRegister.Forms
             dtpDate.Format = DateTimePickerFormat.Custom;
             btnSubmit.Text = SportRegistrationSystem.lblSubmit;
             btnCancel.Text = SportRegistrationSystem.lblCancel;
-            //handle the passsed in studentname and populate it(not done).
+            DataTable dt = StudentBLL.LoadStudent(studentName);
+            List<string> studentNameList = StudentBLL.GetStudentName(dt);
+            foreach (string student in studentNameList)
+            {
+                cbStudentName.Items.Add(student);
+            }
+            cbStudentName.SelectedIndex = 0;
         }
         private void txtPayableAmt_KeyPresss(object sender, KeyPressEventArgs e)
         {
@@ -105,8 +111,8 @@ namespace GymnasticRegister.Forms
             int result = StudentBLL.MakePayment(tempStudentID, float.Parse(txtPayableAmt.Text),
                 DateTime.Parse(dtpDate.Value.ToString(dateFormat)), StaffId, txtRemark.Text);
             MessageBox.Show(result == 1
-                        ? SportRegistrationSystem.lblRegisterSuccess
-                        : SportRegistrationSystem.lblRegisterFailed);
+                        ? SportRegistrationSystem.lblPaymentSuccess
+                        : SportRegistrationSystem.lblPaymentFailed);
             //result == 1? //show print page
         }
     }

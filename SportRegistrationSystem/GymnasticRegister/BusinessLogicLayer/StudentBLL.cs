@@ -22,6 +22,12 @@ namespace GymnasticRegister.BusinessLogicLayer
             return dt;
         }
 
+        public static DataTable LoadStudent(string StudentName)
+        {
+            DataTable dt = StudentDAL.LoadStudent(StudentName);
+            return dt;
+        }
+
         public static DataTable GetStudentInfo(string studentName)
         {
             DataTable dt = StudentDAL.GetStudentInfo(studentName);

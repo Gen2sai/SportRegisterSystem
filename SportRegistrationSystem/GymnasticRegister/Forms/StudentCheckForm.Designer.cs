@@ -40,9 +40,9 @@
             // cbStudent
             // 
             this.cbStudent.FormattingEnabled = true;
-            this.cbStudent.Location = new System.Drawing.Point(136, 61);
+            this.cbStudent.Location = new System.Drawing.Point(120, 61);
             this.cbStudent.Name = "cbStudent";
-            this.cbStudent.Size = new System.Drawing.Size(170, 21);
+            this.cbStudent.Size = new System.Drawing.Size(209, 21);
             this.cbStudent.TabIndex = 0;
             // 
             // lblStudent
@@ -56,7 +56,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(231, 104);
+            this.btnSubmit.Location = new System.Drawing.Point(254, 104);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(150, 104);
+            this.btnCancel.Location = new System.Drawing.Point(173, 104);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -83,7 +83,7 @@
             this.groupBox1.Controls.Add(this.lblStudent);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(306, 133);
+            this.groupBox1.Size = new System.Drawing.Size(335, 133);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 157);
+            this.ClientSize = new System.Drawing.Size(359, 157);
             this.Controls.Add(this.groupBox1);
             this.Name = "StudentCheckForm";
             this.Text = "StudentCheck";

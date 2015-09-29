@@ -135,6 +135,9 @@
   <data name="lblCheckPayment" xml:space="preserve">
     <value>Check Payment</value>
   </data>
+  <data name="lblClearedPayment" xml:space="preserve">
+    <value>All Students Cleared Payment Check</value>
+  </data>
   <data name="lblContactNumber" xml:space="preserve">
     <value>Contact Number :</value>
   </data>
@@ -182,6 +185,12 @@
   </data>
   <data name="lblPayment" xml:space="preserve">
     <value>Payment</value>
+  </data>
+  <data name="lblPaymentFailed" xml:space="preserve">
+    <value>Payment failed.</value>
+  </data>
+  <data name="lblPaymentSuccess" xml:space="preserve">
+    <value>Payment has been successfully made.</value>
   </data>
   <data name="lblPermission" xml:space="preserve">
     <value>Permission :</value>

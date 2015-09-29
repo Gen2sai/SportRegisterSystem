@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GymnasticRegister.BusinessLogicLayer;
 using GymnasticRegister.Resources;
@@ -26,20 +20,24 @@ namespace GymnasticRegister.Forms
             btnCancel.Text = SportRegistrationSystem.lblCancel;
             btnSubmit.Text = SportRegistrationSystem.lblSubmit;
             DataTable dt = StudentBLL.GetLatePaymentByMonth();
-            if (dt != null)
+            if (dt.Rows.Count != 0)
             {
                 foreach (DataRow row in dt.Rows)
                 {
                     cbStudent.Items.Add(row["StudentName"].ToString());
                 }
-                cbStudent.SelectedIndex = 0;
             }
+            else
+            {
+                cbStudent.Items.Add(SportRegistrationSystem.lblClearedPayment);
+            }
+            cbStudent.SelectedIndex = 0;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
-            if (cbStudent.Items.Count != 0)
+            if (cbStudent.Items[0] != SportRegistrationSystem.lblClearedPayment)
             {
                 StudentPaymentForm form = new StudentPaymentForm(staffId, passedPermission, cbStudent.Text);
                 form.Show();
