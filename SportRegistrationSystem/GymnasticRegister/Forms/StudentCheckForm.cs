@@ -47,7 +47,7 @@ namespace GymnasticRegister.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(staffId, passedPermission);
+            StudentMenuForm form = new StudentMenuForm(staffId, passedPermission);
             form.Show();
             this.Close();
         }

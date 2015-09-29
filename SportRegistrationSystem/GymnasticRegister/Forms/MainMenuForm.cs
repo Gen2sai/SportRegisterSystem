@@ -34,7 +34,7 @@ namespace GymnasticRegister.Forms
 
         private void btnStudentManagement_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(StaffId, permission);
+            StudentMenuForm form = new StudentMenuForm(StaffId, permission);
             form.Show();
             this.Hide();
         }

@@ -101,7 +101,7 @@ namespace GymnasticRegister.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(StaffId, passedPermission);
+            StudentMenuForm form = new StudentMenuForm(StaffId, passedPermission);
             form.Show();
             this.Close();
         }

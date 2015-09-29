@@ -35,7 +35,6 @@ namespace GymnasticRegister.Forms
             this.btnStudentManagement = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,42 +60,31 @@ namespace GymnasticRegister.Forms
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(6, 106);
+            this.btnLogout.Location = new System.Drawing.Point(6, 77);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
-            this.btnLogout.TabIndex = 3;
+            this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "button1";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnRegister);
             this.groupBox1.Controls.Add(this.btnStaffManagement);
             this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Controls.Add(this.btnStudentManagement);
             this.groupBox1.Location = new System.Drawing.Point(74, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(89, 140);
+            this.groupBox1.Size = new System.Drawing.Size(89, 108);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MainMenu";
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(6, 77);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 2;
-            this.btnRegister.Text = "button2";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 163);
+            this.ClientSize = new System.Drawing.Size(240, 128);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainMenuForm";
             this.Text = "MainMenuForm";
@@ -112,6 +100,5 @@ namespace GymnasticRegister.Forms
         private Button btnStudentManagement;
         private Button btnLogout;
         private GroupBox groupBox1;
-        private Button btnRegister;
     }
 }

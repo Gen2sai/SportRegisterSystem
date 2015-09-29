@@ -28,14 +28,14 @@ namespace GymnasticRegister.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(StaffId, permission);
+            StudentMenuForm form = new StudentMenuForm(StaffId, permission);
             form.Show();
             this.Dispose();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            StudentForm form = new StudentForm(StaffId, permission);
+            StudentMenuForm form = new StudentMenuForm(StaffId, permission);
             if (!Authenticate.Authentication(StaffId, permission)) return;
             if (txtStudentName != null)
             {

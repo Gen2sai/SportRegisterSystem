@@ -81,11 +81,11 @@
     <Compile Include="Forms\MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentForm.cs">
+    <Compile Include="Forms\StudentMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StudentForm.Designer.cs">
-      <DependentUpon>StudentForm.cs</DependentUpon>
+    <Compile Include="Forms\StudentMenuForm.Designer.cs">
+      <DependentUpon>StudentMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentViewUpdateForm.cs">
       <SubType>Form</SubType>
@@ -131,8 +131,8 @@
     <EmbeddedResource Include="Forms\MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentForm.resx">
-      <DependentUpon>StudentForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\StudentMenuForm.resx">
+      <DependentUpon>StudentMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViewUpdateForm.resx">
       <DependentUpon>StudentViewUpdateForm.cs</DependentUpon>
