@@ -36,6 +36,7 @@ namespace GymnasticRegister.Forms
             this.btnCheckPayment = new System.Windows.Forms.Button();
             this.btnPayment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,24 +82,35 @@ namespace GymnasticRegister.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBack);
             this.groupBox1.Controls.Add(this.btnCheckPayment);
             this.groupBox1.Controls.Add(this.btnPayment);
             this.groupBox1.Controls.Add(this.btnAddStudent);
             this.groupBox1.Controls.Add(this.btnStudentManagement);
             this.groupBox1.Location = new System.Drawing.Point(74, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(89, 139);
+            this.groupBox1.Size = new System.Drawing.Size(89, 159);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "StudentMenu";
             // 
-            // StudentForm
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(6, 130);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "button1";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // StudentMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 163);
+            this.ClientSize = new System.Drawing.Size(240, 183);
             this.Controls.Add(this.groupBox1);
-            this.Name = "StudentForm";
+            this.Name = "StudentMenuForm";
             this.Text = "StudentForm";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -112,5 +124,6 @@ namespace GymnasticRegister.Forms
         private Button btnCheckPayment;
         private Button btnPayment;
         private GroupBox groupBox1;
+        private Button btnBack;
     }
 }

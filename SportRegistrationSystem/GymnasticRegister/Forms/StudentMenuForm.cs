@@ -18,34 +18,42 @@ namespace GymnasticRegister.Forms
             btnStudentManagement.Text = SportRegistrationSystem.lblStudentManagement;
             btnCheckPayment.Text = SportRegistrationSystem.lblCheckPayment;
             btnPayment.Text = SportRegistrationSystem.lblPayment;
+            btnBack.Text = SportRegistrationSystem.lblBack;
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             StudentRegistrationForm form = new StudentRegistrationForm(StaffId, permission);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnStudentManagement_Click(object sender, EventArgs e)
         {
             StudentViewUpdateForm form = new StudentViewUpdateForm(StaffId, permission);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCheckPayment_Click(object sender, EventArgs e)
         {
             StudentCheckForm form = new StudentCheckForm(StaffId, permission);
             form.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
             StudentPaymentForm form = new StudentPaymentForm(StaffId, permission);
             form.Show();
-            this.Hide();
+            this.Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainMenuForm form = new MainMenuForm(StaffId, permission);
+            form.Show();
+            this.Close();
         }
     }
 }
