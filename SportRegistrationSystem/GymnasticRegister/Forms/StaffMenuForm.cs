@@ -22,6 +22,7 @@ namespace GymnasticRegister.Forms
             passedPermission = permission;
             InitializeComponent();
             btnStaffRegister.Text = SportRegistrationSystem.lblRegister;
+            btnBack.Text = SportRegistrationSystem.lblBack;
         }
 
         private void btnStaffRegister_Click(object sender, EventArgs e)
