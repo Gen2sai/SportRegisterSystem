@@ -41,7 +41,7 @@ namespace GymnasticRegister.Forms
             {
                 StudentPaymentForm form = new StudentPaymentForm(staffId, passedPermission, cbStudent.Text);
                 form.Show();
-                this.Close();
+                Close();
             }
         }
 
@@ -49,7 +49,7 @@ namespace GymnasticRegister.Forms
         {
             StudentMenuForm form = new StudentMenuForm(staffId, passedPermission);
             form.Show();
-            this.Close();
+            Close();
         }
     }
 }

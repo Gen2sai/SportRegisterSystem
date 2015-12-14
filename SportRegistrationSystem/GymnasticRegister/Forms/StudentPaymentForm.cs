@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Globalization;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GymnasticRegister.BusinessLogicLayer;
-using GymnasticRegister.Enum;
 using GymnasticRegister.Resources;
 
 namespace GymnasticRegister.Forms
@@ -105,7 +98,7 @@ namespace GymnasticRegister.Forms
         {
             StudentMenuForm form = new StudentMenuForm(StaffId, passedPermission);
             form.Show();
-            this.Close();
+            Close();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -117,25 +110,25 @@ namespace GymnasticRegister.Forms
                         : SportRegistrationSystem.lblPaymentFailed);
             if (result == 1)
             {
-            DialogResult dialogResult = MessageBox.Show("Print Receipt?", "Print Receipt Prompt", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                PrintDialog printDialog = new PrintDialog();
-                PrintDocument printDocument = new PrintDocument();
-                printDialog.Document = printDocument;
-                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt);
-                if (printDialog.ShowDialog() == DialogResult.OK)
+                DialogResult dialogResult = MessageBox.Show("Print Receipt?", "Print Receipt Prompt", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    printDocument.Print();
+                    PrintDialog printDialog = new PrintDialog();
+                    PrintDocument printDocument = new PrintDocument();
+                    printDialog.Document = printDocument;
+                    printDocument.PrintPage += CreateReceipt;
+                    if (printDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        printDocument.Print();
+                    }
                 }
-            }
             }
             StudentMenuForm form = new StudentMenuForm(StaffId, passedPermission);
             form.Show();
             this.Close();
         }
 
-        private void CreateReceipt(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void CreateReceipt(object sender, PrintPageEventArgs e)
         {
             Graphics graphic = e.Graphics;
             Font font = new Font("Times New Roman", 15);
@@ -144,33 +137,38 @@ namespace GymnasticRegister.Forms
             int startY = 10;
             int offset = 40;
 
-            graphic.DrawString("BB Gymnastic Centre", new Font("Times New Roman", 24), new SolidBrush(Color.Green), startX, startY);
-            graphic.DrawString("-------------------------------------------------------------------------\n\n", font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 5;
-            string studentName = "Student Name : \t" + cbStudentName.SelectedItem.ToString() + "\n";
-            graphic.DrawString(studentName, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 8;
+            string companyName = "BB Gymnastic Centre\n";
+            string slogan = " Be Better";
+            string studentName = "Student Name : \t" + cbStudentName.SelectedItem + "\n";
             string paidAmount = "Paid Amount : \t" + txtPayableAmt.Text + "\n";
-            graphic.DrawString(paidAmount, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 8;
             string paidMonth = "Paid for Month : \t" + dtpDate.Value.ToString("MMMM") + " " + dtpDate.Value.Year + "\n";
-            graphic.DrawString(paidMonth, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 8;
             string remarks = "Remarks : \t" + txtRemark.Text + "\n";
-            graphic.DrawString(remarks, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 20;
-
             string StaffID = "This receipt was issued by " + StaffBll.StaffLookup(StaffId) + "\n";
-            graphic.DrawString(StaffID, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 8;
             string currentDate = "This receipt was printed on " + DateTime.Now + "\n";
-            graphic.DrawString(currentDate, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 5;
-            graphic.DrawString("-------------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 5;
             string quote = "QUOTE WILL BE INSERTED HERE\n";
+
+            graphic.DrawString(companyName, new Font("Times New Roman", 24), new SolidBrush(Color.Green), startX, startY);
+            graphic.DrawString(slogan, new Font("Times New Roman", 22), new SolidBrush(Color.Green), startX, startY + offset);
+            offset += FontHeight + 5;
+            graphic.DrawString("-------------------------------------------------------------------------\n\n", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 5;
+            graphic.DrawString(studentName, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 8;
+            graphic.DrawString(paidAmount, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 8;
+            graphic.DrawString(paidMonth, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 8;
+            graphic.DrawString(remarks, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 20;
+
+            graphic.DrawString(StaffID, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 8;
+            graphic.DrawString(currentDate, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 5;
+            graphic.DrawString("-------------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 5;
             graphic.DrawString(quote, font, new SolidBrush(Color.Black), startX, startY + offset);
-            offset += (int)FontHeight + 5;
+            offset += FontHeight + 5;
             graphic.DrawString("-------------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
         }
     }

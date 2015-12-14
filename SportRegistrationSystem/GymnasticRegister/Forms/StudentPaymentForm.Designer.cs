@@ -1,11 +1,14 @@
-﻿namespace GymnasticRegister.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace GymnasticRegister.Forms
 {
     partial class StudentPaymentForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -234,22 +237,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblStudentName;
-        private System.Windows.Forms.Label lblGrade;
-        private System.Windows.Forms.Label lblAge;
-        private System.Windows.Forms.Label lblPayableAmt;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblRemark;
-        private System.Windows.Forms.ComboBox cbStudentName;
-        private System.Windows.Forms.Label lblStudentGrade;
-        private System.Windows.Forms.Label lblStudentAge;
-        private System.Windows.Forms.TextBox txtPayableAmt;
-        private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.RichTextBox txtRemark;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label lblLastPaid;
-        private System.Windows.Forms.Label lblStudentLastPaid;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private Label lblStudentName;
+        private Label lblGrade;
+        private Label lblAge;
+        private Label lblPayableAmt;
+        private Label lblDate;
+        private Label lblRemark;
+        private ComboBox cbStudentName;
+        private Label lblStudentGrade;
+        private Label lblStudentAge;
+        private TextBox txtPayableAmt;
+        private DateTimePicker dtpDate;
+        private RichTextBox txtRemark;
+        private Button btnSubmit;
+        private Button btnCancel;
+        private Label lblLastPaid;
+        private Label lblStudentLastPaid;
+        private GroupBox groupBox1;
     }
 }

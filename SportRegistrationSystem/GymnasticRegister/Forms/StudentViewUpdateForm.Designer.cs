@@ -1,11 +1,14 @@
-﻿namespace GymnasticRegister.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace GymnasticRegister.Forms
 {
     partial class StudentViewUpdateForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -71,7 +74,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnBack;
+        private DataGridView dataGridView1;
+        private Button btnBack;
     }
 }

@@ -1,11 +1,14 @@
-﻿namespace GymnasticRegister.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace GymnasticRegister.Forms
 {
     partial class StudentCheckForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -114,11 +117,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbStudent;
-        private System.Windows.Forms.Label lblStudent;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblDesc;
+        private ComboBox cbStudent;
+        private Label lblStudent;
+        private Button btnSubmit;
+        private Button btnCancel;
+        private GroupBox groupBox1;
+        private Label lblDesc;
     }
 }

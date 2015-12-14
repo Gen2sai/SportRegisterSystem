@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GymnasticRegister.BusinessLogicLayer;
 using GymnasticRegister.Resources;
@@ -30,7 +24,7 @@ namespace GymnasticRegister.Forms
         {
             StudentMenuForm form = new StudentMenuForm(StaffId, passedPermission);
             form.Show();
-            this.Close();
+            Close();
         }
     }
 }
