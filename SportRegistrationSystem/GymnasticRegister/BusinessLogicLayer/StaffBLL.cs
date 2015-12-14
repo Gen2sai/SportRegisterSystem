@@ -19,5 +19,10 @@ namespace GymnasticRegister.BusinessLogicLayer
 
             return status == 1;
         }
+
+        public static string StaffLookup(int staffID)
+        {
+            return StaffDal.StaffLookup(staffID);
+        }
     }
 }

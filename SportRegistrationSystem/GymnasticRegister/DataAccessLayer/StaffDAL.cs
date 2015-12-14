@@ -86,5 +86,34 @@ namespace GymnasticRegister.DataAccessLayer
         {
             return 0;
         }
+
+        public static string StaffLookup(int StaffID = 2)
+        {
+            try
+            {
+                string StaffName;
+
+                SqlConnection conn = new SqlConnection(ConnectionConfig.GetConnectionString());
+                SqlCommand cmd;
+                SqlDataAdapter da;
+                DataTable dt = new DataTable();
+
+                cmd = new SqlCommand("SELECT FullName FROM Staff WHERE StaffID = @StaffID", conn);
+                cmd.Parameters.AddWithValue("@StaffID", StaffID);
+
+                conn.Open();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+
+
+                return dt.Rows[0].ItemArray[0].ToString();
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.LogError(ex);
+                return null;
+            }
+        }
     }
 }
