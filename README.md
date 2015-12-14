@@ -1,4 +1,4 @@
 # SportRegisterSystem
 A register for sports services. 
 
-database script subjected to changes if there are any changes to structure.
+Database backup(.bak) and create script added into project under the folder DBBackup as of 20151214.
