@@ -138,17 +138,23 @@ namespace GymnasticRegister.Forms
             int offset = 40;
 
             string companyName = "BB Gymnastic Centre\n";
-            string slogan = " Be Better";
+            string slogan = "Be Better";
             string studentName = "Student Name : \t" + cbStudentName.SelectedItem + "\n";
             string paidAmount = "Paid Amount : \t" + txtPayableAmt.Text + "\n";
             string paidMonth = "Paid for Month : \t" + dtpDate.Value.ToString("MMMM") + " " + dtpDate.Value.Year + "\n";
             string remarks = "Remarks : \t" + txtRemark.Text + "\n";
             string StaffID = "This receipt was issued by " + StaffBll.StaffLookup(StaffId) + "\n";
             string currentDate = "This receipt was printed on " + DateTime.Now + "\n";
-            string quote = "QUOTE WILL BE INSERTED HERE\n";
+            string quote = QuoteBLL.GetRandomQuote() + "\n";
+            string contact1 = "SH Chong - 0162773629";
+            string contact2 = "SF Soo - 0133057605";
+            string webPage = "WebPage : www.bbgimn.com";
+            string receiptNumber = (PaymentBLL.GetReceiptNumber() + 1 ).ToString();
+            
 
             graphic.DrawString(companyName, new Font("Times New Roman", 24), new SolidBrush(Color.Green), startX, startY);
-            graphic.DrawString(slogan, new Font("Times New Roman", 22), new SolidBrush(Color.Green), startX, startY + offset);
+            graphic.DrawString(receiptNumber, new Font("Times New Roman", 24), new SolidBrush(Color.Black), companyName.Length + 425, startY);
+            graphic.DrawString(slogan, new Font("Times New Roman", 22), new SolidBrush(Color.Black), startX, startY + offset);
             offset += FontHeight + 5;
             graphic.DrawString("-------------------------------------------------------------------------\n\n", font, new SolidBrush(Color.Black), startX, startY + offset);
             offset += FontHeight + 5;
@@ -170,6 +176,12 @@ namespace GymnasticRegister.Forms
             graphic.DrawString(quote, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset += FontHeight + 5;
             graphic.DrawString("-------------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 8;
+            graphic.DrawString(contact1, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 8;
+            graphic.DrawString(contact2, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset += FontHeight + 8;
+            graphic.DrawString(webPage, font, new SolidBrush(Color.Black), startX, startY + offset);
         }
     }
 }

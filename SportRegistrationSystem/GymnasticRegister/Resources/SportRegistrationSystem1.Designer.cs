@@ -61,6 +61,15 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Quote :.
+        /// </summary>
+        internal static string lblAddQuote {
+            get {
+                return ResourceManager.GetString("lblAddQuote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Student.
         /// </summary>
         internal static string lblAddStudent {
@@ -291,6 +300,24 @@ namespace GymnasticRegister.Resources {
         internal static string lblPermission {
             get {
                 return ResourceManager.GetString("lblPermission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quote.
+        /// </summary>
+        internal static string lblQuote {
+            get {
+                return ResourceManager.GetString("lblQuote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quote List :.
+        /// </summary>
+        internal static string lblQuoteList {
+            get {
+                return ResourceManager.GetString("lblQuoteList", resourceCulture);
             }
         }
         

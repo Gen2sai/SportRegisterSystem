@@ -48,15 +48,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogicLayer\PaymentBLL.cs" />
+    <Compile Include="BusinessLogicLayer\QuoteBLL.cs" />
     <Compile Include="BusinessLogicLayer\StaffBLL.cs" />
     <Compile Include="BusinessLogicLayer\StudentBLL.cs" />
     <Compile Include="DataAccessLayer\ConnectionConfig.cs" />
+    <Compile Include="DataAccessLayer\PaymentDAL.cs" />
+    <Compile Include="DataAccessLayer\QuoteDAL.cs" />
     <Compile Include="DataAccessLayer\StaffDAL.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataAccessLayer\StudentDAL.cs" />
     <Compile Include="Enum\GradeEnum.cs" />
     <Compile Include="Enum\PermissionEnum.cs" />
+    <Compile Include="Forms\QuoteManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuoteManagementForm.Designer.cs">
+      <DependentUpon>QuoteManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StaffMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +132,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SportRegistrationSystem.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\QuoteManagementForm.resx">
+      <DependentUpon>QuoteManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StaffMenuForm.resx">
       <DependentUpon>StaffMenuForm.cs</DependentUpon>
     </EmbeddedResource>

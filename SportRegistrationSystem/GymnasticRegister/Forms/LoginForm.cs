@@ -57,5 +57,10 @@ namespace GymnasticRegister
                 }
             }
         }
+
+        private void LoginForm_FormClosing(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

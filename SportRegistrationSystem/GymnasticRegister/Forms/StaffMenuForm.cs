@@ -23,6 +23,7 @@ namespace GymnasticRegister.Forms
             InitializeComponent();
             btnStaffRegister.Text = SportRegistrationSystem.lblRegister;
             btnBack.Text = SportRegistrationSystem.lblBack;
+            btnQuote.Text = SportRegistrationSystem.lblQuote;
         }
 
         private void btnStaffRegister_Click(object sender, EventArgs e)
@@ -35,6 +36,13 @@ namespace GymnasticRegister.Forms
         private void btnBack_Click(object sender, EventArgs e)
         {
             MainMenuForm form = new MainMenuForm(passedStaffId, passedPermission);
+            form.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            QuoteManagementForm form = new QuoteManagementForm(passedStaffId, passedPermission);
             form.Show();
             this.Close();
         }
