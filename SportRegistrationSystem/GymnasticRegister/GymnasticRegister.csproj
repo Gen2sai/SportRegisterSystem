@@ -178,7 +178,7 @@
     <EmbeddedResource Include="Forms\StaffRegistrationForm.resx">
       <DependentUpon>StaffRegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DBBackup\SportRegistrationSystem DB.rar" />
+    <None Include="DBBackup\SportRegistrationSystem.rar" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
