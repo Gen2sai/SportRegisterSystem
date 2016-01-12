@@ -16,6 +16,17 @@ namespace GymnasticRegister.Forms
         private readonly int passedPermission;
         private int tempStudentID;
 
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        }
+
         public StudentPaymentForm(int username, int permission)
         {
             InitializeComponent();
@@ -103,29 +114,33 @@ namespace GymnasticRegister.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int result = StudentBLL.MakePayment(tempStudentID, float.Parse(txtPayableAmt.Text),
-                DateTime.Parse(dtpDate.Value.ToString(dateFormat)), StaffId, txtRemark.Text);
-            MessageBox.Show(result == 1
-                        ? SportRegistrationSystem.lblPaymentSuccess
-                        : SportRegistrationSystem.lblPaymentFailed);
-            if (result == 1)
+            if (txtPayableAmt.Text != "0" || txtPayableAmt.Text != "")
             {
-                DialogResult dialogResult = MessageBox.Show("Print Receipt?", "Print Receipt Prompt", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                int result = StudentBLL.MakePayment(tempStudentID, float.Parse(txtPayableAmt.Text),
+                DateTime.Parse(dtpDate.Value.ToString(dateFormat)), StaffId, txtRemark.Text);
+                MessageBox.Show(result == 1
+                            ? SportRegistrationSystem.lblPaymentSuccess
+                            : SportRegistrationSystem.lblPaymentFailed);
+                if (result == 1)
                 {
-                    PrintDialog printDialog = new PrintDialog();
-                    PrintDocument printDocument = new PrintDocument();
-                    printDialog.Document = printDocument;
-                    printDocument.PrintPage += CreateReceipt;
-                    if (printDialog.ShowDialog() == DialogResult.OK)
+                    DialogResult dialogResult = MessageBox.Show("Print Receipt?", "Print Receipt Prompt", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        printDocument.Print();
+                        PrintDialog printDialog = new PrintDialog();
+                        PrintDocument printDocument = new PrintDocument();
+                        printDialog.Document = printDocument;
+                        printDocument.PrintPage += CreateReceipt;
+                        if (printDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            printDocument.Print();
+                        }
                     }
                 }
+                StudentMenuForm form = new StudentMenuForm(StaffId, passedPermission);
+                form.Show();
+                this.Close();
             }
-            StudentMenuForm form = new StudentMenuForm(StaffId, passedPermission);
-            form.Show();
-            this.Close();
+            MessageBox.Show(SportRegistrationSystem.lblInvalidValue);
         }
 
         private void CreateReceipt(object sender, PrintPageEventArgs e)
@@ -149,8 +164,8 @@ namespace GymnasticRegister.Forms
             string contact1 = "SH Chong - 0162773629";
             string contact2 = "SF Soo - 0133057605";
             string webPage = "WebPage : www.bbgimn.com";
-            string receiptNumber = (PaymentBLL.GetReceiptNumber() + 1 ).ToString();
-            
+            string receiptNumber = (PaymentBLL.GetReceiptNumber() + 1).ToString();
+
 
             graphic.DrawString(companyName, new Font("Times New Roman", 24), new SolidBrush(Color.Green), startX, startY);
             graphic.DrawString(receiptNumber, new Font("Times New Roman", 24), new SolidBrush(Color.Black), companyName.Length + 425, startY);
@@ -182,6 +197,14 @@ namespace GymnasticRegister.Forms
             graphic.DrawString(contact2, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset += FontHeight + 8;
             graphic.DrawString(webPage, font, new SolidBrush(Color.Black), startX, startY + offset);
+        }
+
+        private void KeydownHandler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSubmit_Click(this, new EventArgs());
+            }
         }
     }
 }

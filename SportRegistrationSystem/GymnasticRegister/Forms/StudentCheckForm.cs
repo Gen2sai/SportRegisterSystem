@@ -10,6 +10,18 @@ namespace GymnasticRegister.Forms
     {
         private readonly int staffId;
         private readonly int passedPermission;
+
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
+
         public StudentCheckForm(int staffID, int permission)
         {
             InitializeComponent();
@@ -36,7 +48,6 @@ namespace GymnasticRegister.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
             if (cbStudent.Items[0] != SportRegistrationSystem.lblClearedPayment)
             {
                 StudentPaymentForm form = new StudentPaymentForm(staffId, passedPermission, cbStudent.Text);
@@ -50,6 +61,14 @@ namespace GymnasticRegister.Forms
             StudentMenuForm form = new StudentMenuForm(staffId, passedPermission);
             form.Show();
             Close();
+        }
+
+        private void KeydownHandler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSubmit_Click(this, new EventArgs());
+            }
         }
     }
 }

@@ -205,6 +205,15 @@ namespace GymnasticRegister.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid Value added. Please confirm value inserted..
+        /// </summary>
+        internal static string lblInvalidValue {
+            get {
+                return ResourceManager.GetString("lblInvalidValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Paid :.
         /// </summary>
         internal static string lblLastPaid {
@@ -237,6 +246,15 @@ namespace GymnasticRegister.Resources {
         internal static string lblLogout {
             get {
                 return ResourceManager.GetString("lblLogout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lookup.
+        /// </summary>
+        internal static string lblLookup {
+            get {
+                return ResourceManager.GetString("lblLookup", resourceCulture);
             }
         }
         
@@ -354,6 +372,15 @@ namespace GymnasticRegister.Resources {
         internal static string lblRemark {
             get {
                 return ResourceManager.GetString("lblRemark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reporting.
+        /// </summary>
+        internal static string lblReporting {
+            get {
+                return ResourceManager.GetString("lblReporting", resourceCulture);
             }
         }
         

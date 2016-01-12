@@ -112,8 +112,9 @@ namespace GymnasticRegister.Forms
             this.cbStudentName.Location = new System.Drawing.Point(115, 16);
             this.cbStudentName.Name = "cbStudentName";
             this.cbStudentName.Size = new System.Drawing.Size(200, 21);
-            this.cbStudentName.TabIndex = 6;
+            this.cbStudentName.TabIndex = 0;
             this.cbStudentName.SelectedIndexChanged += new System.EventHandler(this.cbStudentName_SelectedIndexChanged);
+            this.cbStudentName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // lblStudentGrade
             // 
@@ -138,7 +139,8 @@ namespace GymnasticRegister.Forms
             this.txtPayableAmt.Location = new System.Drawing.Point(115, 78);
             this.txtPayableAmt.Name = "txtPayableAmt";
             this.txtPayableAmt.Size = new System.Drawing.Size(200, 20);
-            this.txtPayableAmt.TabIndex = 9;
+            this.txtPayableAmt.TabIndex = 1;
+            this.txtPayableAmt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             this.txtPayableAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPayableAmt_KeyPresss);
             // 
             // dtpDate
@@ -148,22 +150,24 @@ namespace GymnasticRegister.Forms
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.ShowUpDown = true;
             this.dtpDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpDate.TabIndex = 10;
+            this.dtpDate.TabIndex = 2;
+            this.dtpDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // txtRemark
             // 
             this.txtRemark.Location = new System.Drawing.Point(115, 146);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(200, 60);
-            this.txtRemark.TabIndex = 11;
+            this.txtRemark.TabIndex = 3;
             this.txtRemark.Text = "";
+            this.txtRemark.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(240, 214);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 12;
+            this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "button1";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -173,7 +177,7 @@ namespace GymnasticRegister.Forms
             this.btnCancel.Location = new System.Drawing.Point(159, 214);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 13;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "button1";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -216,7 +220,7 @@ namespace GymnasticRegister.Forms
             this.groupBox1.Controls.Add(this.lblStudentAge);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 249);
+            this.groupBox1.Size = new System.Drawing.Size(321, 242);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Payment";

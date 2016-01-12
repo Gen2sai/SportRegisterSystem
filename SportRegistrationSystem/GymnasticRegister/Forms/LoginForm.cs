@@ -58,6 +58,14 @@ namespace GymnasticRegister
             }
         }
 
+        private void btnLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(this, new EventArgs());
+            }
+        }
+
         private void LoginForm_FormClosing(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

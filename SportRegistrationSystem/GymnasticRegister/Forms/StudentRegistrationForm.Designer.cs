@@ -107,6 +107,7 @@ namespace GymnasticRegister.Forms
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(121, 20);
             this.txtStudentName.TabIndex = 6;
+            this.txtStudentName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // txtAge
             // 
@@ -114,6 +115,7 @@ namespace GymnasticRegister.Forms
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(121, 20);
             this.txtAge.TabIndex = 7;
+            this.txtAge.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // txtContactNumber
             // 
@@ -121,6 +123,7 @@ namespace GymnasticRegister.Forms
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(121, 20);
             this.txtContactNumber.TabIndex = 9;
+            this.txtContactNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // cbGrade
             // 
@@ -129,6 +132,7 @@ namespace GymnasticRegister.Forms
             this.cbGrade.Name = "cbGrade";
             this.cbGrade.Size = new System.Drawing.Size(121, 21);
             this.cbGrade.TabIndex = 10;
+            this.cbGrade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // groupBox1
             // 

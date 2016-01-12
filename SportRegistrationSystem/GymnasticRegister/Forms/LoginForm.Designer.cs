@@ -64,6 +64,7 @@ namespace GymnasticRegister
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(136, 20);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnLogin_KeyDown);
             // 
             // txtPassword
             // 
@@ -72,6 +73,7 @@ namespace GymnasticRegister
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(136, 20);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnLogin_KeyDown);
             // 
             // btnLogin
             // 
@@ -83,6 +85,7 @@ namespace GymnasticRegister
             this.btnLogin.Text = "button1";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnLogin_KeyDown);
             // 
             // groupBox1
             // 

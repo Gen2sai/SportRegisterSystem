@@ -10,6 +10,18 @@ namespace GymnasticRegister.Forms
     {
         private readonly int StaffId;
         private readonly int passedPermission;
+
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
+
         public StudentViewUpdateForm(int username, int permission)
         {
             StaffId = username;

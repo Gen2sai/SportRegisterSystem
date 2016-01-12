@@ -50,11 +50,13 @@
   <ItemGroup>
     <Compile Include="BusinessLogicLayer\PaymentBLL.cs" />
     <Compile Include="BusinessLogicLayer\QuoteBLL.cs" />
+    <Compile Include="BusinessLogicLayer\ReportingBLL.cs" />
     <Compile Include="BusinessLogicLayer\StaffBLL.cs" />
     <Compile Include="BusinessLogicLayer\StudentBLL.cs" />
     <Compile Include="DataAccessLayer\ConnectionConfig.cs" />
     <Compile Include="DataAccessLayer\PaymentDAL.cs" />
     <Compile Include="DataAccessLayer\QuoteDAL.cs" />
+    <Compile Include="DataAccessLayer\ReportingDAL.cs" />
     <Compile Include="DataAccessLayer\StaffDAL.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -66,6 +68,12 @@
     </Compile>
     <Compile Include="Forms\QuoteManagementForm.Designer.cs">
       <DependentUpon>QuoteManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportingForm.Designer.cs">
+      <DependentUpon>ReportingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StaffMenuForm.cs">
       <SubType>Form</SubType>
@@ -134,6 +142,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\QuoteManagementForm.resx">
       <DependentUpon>QuoteManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportingForm.resx">
+      <DependentUpon>ReportingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StaffMenuForm.resx">
       <DependentUpon>StaffMenuForm.cs</DependentUpon>

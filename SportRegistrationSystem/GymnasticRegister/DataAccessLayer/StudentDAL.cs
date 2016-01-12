@@ -125,14 +125,18 @@ namespace GymnasticRegister.DataAccessLayer
         {
             try
             {
+                DateTime receivedate = new DateTime();
+                receivedate = DateTime.Now;
+
                 int result;
                 SqlConnection conn = new SqlConnection(ConnectionConfig.GetConnectionString());
                 SqlCommand cmd;
 
-                cmd = new SqlCommand("INSERT INTO Payment (StudentID, PaidAmount, PaymentDate, ReceivedBy, Remark) VALUES (@studentID, @payableAmt, @date, @StaffID, @remark)", conn);
+                cmd = new SqlCommand("INSERT INTO Payment (StudentID, PaidAmount, PaymentDate, ReceivedDate, ReceivedBy, Remark) VALUES (@studentID, @payableAmt, @date, @receivedDate, @StaffID, @remark)", conn);
                 cmd.Parameters.AddWithValue("@studentID", studentID);
                 cmd.Parameters.AddWithValue("@payableAmt", payableAmt);
                 cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@receivedDate", receivedate);
                 cmd.Parameters.AddWithValue("@StaffID", StaffId);
                 cmd.Parameters.AddWithValue("@remark", remark);
 

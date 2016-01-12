@@ -12,6 +12,17 @@ namespace GymnasticRegister.Forms
         private int StaffId;
         private int permission;
 
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
+
         public StudentRegistrationForm(int passedUsername, int passedPermission)
         {
             InitializeComponent();
@@ -50,6 +61,14 @@ namespace GymnasticRegister.Forms
                     form.Show();
                     this.Dispose();
                 }
+            }
+        }
+
+        private void KeydownHandler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSubmit_Click(this, new EventArgs());
             }
         }
     }

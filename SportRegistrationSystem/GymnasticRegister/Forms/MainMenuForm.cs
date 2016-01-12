@@ -11,11 +11,23 @@ namespace GymnasticRegister.Forms
         private int StaffId;
         private int permission;
 
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
+
         public MainMenuForm(List<StaffClass> loginStatus)
         {
             InitializeComponent();
             btnStaffManagement.Text = SportRegistrationSystem.lblStaffManagement;
             btnStudentManagement.Text = SportRegistrationSystem.lblStudentManagement;
+            btnReporting.Text = SportRegistrationSystem.lblReporting;
             btnLogout.Text = SportRegistrationSystem.lblLogout;
             StaffId = loginStatus[0].StaffId;
             permission = loginStatus[0].PermissionId;
@@ -27,13 +39,9 @@ namespace GymnasticRegister.Forms
             btnStaffManagement.Text = SportRegistrationSystem.lblStaffManagement;
             btnStudentManagement.Text = SportRegistrationSystem.lblStudentManagement;
             btnLogout.Text = SportRegistrationSystem.lblLogout;
+            btnReporting.Text = SportRegistrationSystem.lblReporting;
             StaffId = staffId;
             permission = passedPermission;
-        }
-
-        private void MainMenuForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnStaffManagement_Click(object sender, EventArgs e)
@@ -59,7 +67,15 @@ namespace GymnasticRegister.Forms
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            //temporary disabled this function as i am not sure will this be abusable.
             StaffRegistrationForm form = new StaffRegistrationForm();
+            form.Show();
+            this.Close();
+        }
+
+        private void btnReporting_Click(object sender, EventArgs e)
+        {
+            ReportingForm form = new ReportingForm(StaffId, permission);
             form.Show();
             this.Close();
         }

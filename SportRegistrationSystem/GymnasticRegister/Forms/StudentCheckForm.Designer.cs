@@ -47,6 +47,7 @@ namespace GymnasticRegister.Forms
             this.cbStudent.Name = "cbStudent";
             this.cbStudent.Size = new System.Drawing.Size(209, 21);
             this.cbStudent.TabIndex = 0;
+            this.cbStudent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // lblStudent
             // 

@@ -62,7 +62,7 @@
             this.btnQuote.Location = new System.Drawing.Point(6, 48);
             this.btnQuote.Name = "btnQuote";
             this.btnQuote.Size = new System.Drawing.Size(75, 23);
-            this.btnQuote.TabIndex = 0;
+            this.btnQuote.TabIndex = 1;
             this.btnQuote.Text = "button1";
             this.btnQuote.UseVisualStyleBackColor = true;
             this.btnQuote.Click += new System.EventHandler(this.button1_Click);
@@ -72,7 +72,7 @@
             this.btnBack.Location = new System.Drawing.Point(6, 77);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 1;
+            this.btnBack.TabIndex = 2;
             this.btnBack.Text = "button1";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);

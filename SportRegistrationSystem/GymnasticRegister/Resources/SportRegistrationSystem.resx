@@ -165,6 +165,9 @@
   <data name="lblInvalidUsername" xml:space="preserve">
     <value>Invalid Username</value>
   </data>
+  <data name="lblInvalidValue" xml:space="preserve">
+    <value>Invalid Value added. Please confirm value inserted.</value>
+  </data>
   <data name="lblLastPaid" xml:space="preserve">
     <value>Last Paid :</value>
   </data>
@@ -176,6 +179,9 @@
   </data>
   <data name="lblLogout" xml:space="preserve">
     <value>Logout</value>
+  </data>
+  <data name="lblLookup" xml:space="preserve">
+    <value>Lookup</value>
   </data>
   <data name="lblNoLastPayment" xml:space="preserve">
     <value>No Last Payment</value>
@@ -215,6 +221,9 @@
   </data>
   <data name="lblRemark" xml:space="preserve">
     <value>Remark :</value>
+  </data>
+  <data name="lblReporting" xml:space="preserve">
+    <value>Reporting</value>
   </data>
   <data name="lblStaffManagement" xml:space="preserve">
     <value>Staff Management</value>

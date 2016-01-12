@@ -13,6 +13,17 @@ namespace GymnasticRegister
             InitializeComponent();
         }
 
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
+
         private void StaffRegistrationForm_Load(object sender, EventArgs e)
         {
             lblUsername.Text = SportRegistrationSystem.lblUsername;
@@ -34,19 +45,19 @@ namespace GymnasticRegister
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == null)
+            if (txtUsername.Text == "")
             {
                 MessageBox.Show(SportRegistrationSystem.lblInvalidUsername);
             }
             else
             {
-                if (txtPassword.Text == null || lblPassword.Text.Length < 8)
+                if (txtPassword.Text == "" || lblPassword.Text.Length < 8)
                 {
                     MessageBox.Show(SportRegistrationSystem.lblInvalidPassword);
                 }
                 else
                 {
-                    if (txtFullName.Text == null)
+                    if (txtFullName.Text == "")
                     {
                         MessageBox.Show(SportRegistrationSystem.lblInvalidFullName);
                     }
@@ -65,6 +76,14 @@ namespace GymnasticRegister
                         }
                     }
                 }
+            }
+        }
+
+        private void KeydownHandler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnRegister_Click(this, new EventArgs());
             }
         }
     }

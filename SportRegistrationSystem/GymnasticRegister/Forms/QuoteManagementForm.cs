@@ -18,6 +18,17 @@ namespace GymnasticRegister.Forms
         private int refStaffId;
         private int refpermission;
 
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
+
         public QuoteManagementForm(int StaffId, int Permission)
         {
             refStaffId = StaffId;
@@ -47,6 +58,14 @@ namespace GymnasticRegister.Forms
                 DataTable dt = QuoteBLL.LoadQuotes();
                 dataGridView1.DataSource = dt;
                 dataGridView1.Refresh();
+            }
+        }
+
+        private void KeydownHandler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSubmit_Click(this, new EventArgs());
             }
         }
     }

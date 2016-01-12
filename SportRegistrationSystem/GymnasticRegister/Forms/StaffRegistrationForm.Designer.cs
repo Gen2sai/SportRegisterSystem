@@ -87,6 +87,7 @@ namespace GymnasticRegister
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(120, 20);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // txtPassword
             // 
@@ -95,6 +96,7 @@ namespace GymnasticRegister
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(120, 20);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // txtFullName
             // 
@@ -102,6 +104,7 @@ namespace GymnasticRegister
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(120, 20);
             this.txtFullName.TabIndex = 3;
+            this.txtFullName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // cbPermission
             // 
@@ -110,6 +113,7 @@ namespace GymnasticRegister
             this.cbPermission.Name = "cbPermission";
             this.cbPermission.Size = new System.Drawing.Size(121, 21);
             this.cbPermission.TabIndex = 4;
+            this.cbPermission.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // btnCancel
             // 

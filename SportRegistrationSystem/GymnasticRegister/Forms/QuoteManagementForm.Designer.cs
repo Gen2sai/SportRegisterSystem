@@ -59,7 +59,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(464, 423);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 5;
+            this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "button2";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -69,7 +69,7 @@
             this.btnCancel.Location = new System.Drawing.Point(383, 423);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "button1";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -79,8 +79,9 @@
             this.richTextBox1.Location = new System.Drawing.Point(81, 372);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(458, 45);
-            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeydownHandler_KeyDown);
             // 
             // lblAddQuote
             // 
