@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GymnasticRegister.Enum;
 using GymnasticRegister.Resources;
 
 namespace GymnasticRegister.Forms
@@ -35,6 +36,10 @@ namespace GymnasticRegister.Forms
             btnStaffRegister.Text = SportRegistrationSystem.lblRegister;
             btnBack.Text = SportRegistrationSystem.lblBack;
             btnQuote.Text = SportRegistrationSystem.lblQuote;
+            if(permission != (int)PermissionEnum.Admin)
+            {
+                btnStaffRegister.Enabled = false;
+            }
         }
 
         private void btnStaffRegister_Click(object sender, EventArgs e)
