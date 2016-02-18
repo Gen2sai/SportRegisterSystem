@@ -142,13 +142,19 @@
     <value>All Students Cleared Payment Check</value>
   </data>
   <data name="lblContactNumber" xml:space="preserve">
-    <value>Contact Number :</value>
+    <value>EMP Contact No :</value>
   </data>
   <data name="lblDate" xml:space="preserve">
     <value>Date :</value>
   </data>
+  <data name="lblDob" xml:space="preserve">
+    <value>DOB :</value>
+  </data>
   <data name="lblFullName" xml:space="preserve">
     <value>FullName :</value>
+  </data>
+  <data name="lblGender" xml:space="preserve">
+    <value>Gender :</value>
   </data>
   <data name="lblGrade" xml:space="preserve">
     <value>Grade :</value>
@@ -202,7 +208,7 @@
     <value>Payment has been successfully made.</value>
   </data>
   <data name="lblPermission" xml:space="preserve">
-    <value>Permission :</value>
+    <value>Designation :</value>
   </data>
   <data name="lblQuote" xml:space="preserve">
     <value>Quote</value>

@@ -7,7 +7,7 @@ namespace GymnasticRegister.DataAccessLayer
 {
     internal class StudentDAL
     {
-        public static int CreateStudent(string studentName, int grade, int age, int contactNumber, int StaffId)
+        public static int CreateStudent(string studentName, int grade, DateTime DOB, int Gender, int contactNumber, int StaffId)
         {
             try
             {
@@ -17,11 +17,12 @@ namespace GymnasticRegister.DataAccessLayer
 
                 cmd =
                     new SqlCommand(
-                        "IF(NOT EXISTS(SELECT StudentID FROM Student WHERE StudentName = @studentName AND GradeID = @grade AND Age = @age)) BEGIN INSERT INTO STUDENT (StudentName, GradeID, Age, ContactNumber, CreatedBy) VALUES (@studentName, @grade, @age, @contactNumber, @staffId) END",
+                        "IF(NOT EXISTS(SELECT StudentID FROM Student WHERE StudentName = @studentName AND GradeID = @grade AND DOB = @dob AND Gender = @gender)) BEGIN INSERT INTO STUDENT (StudentName, GradeID, DOB, Gender, ContactNumber, CreatedBy) VALUES (@studentName, @grade, @dob, @gender, @contactNumber, @staffId) END",
                         conn);
                 cmd.Parameters.AddWithValue("@studentName", studentName);
                 cmd.Parameters.AddWithValue("@grade", grade);
-                cmd.Parameters.AddWithValue("@age", age);
+                cmd.Parameters.AddWithValue("@dob", DOB);
+                cmd.Parameters.AddWithValue("@gender", Gender);
                 cmd.Parameters.AddWithValue("@contactNumber", contactNumber);
                 cmd.Parameters.AddWithValue("@staffId", StaffId);
 
@@ -49,7 +50,7 @@ namespace GymnasticRegister.DataAccessLayer
 
                 cmd =
                     new SqlCommand(
-                        "SELECT StudentID, StudentName, GradeName, Age, ContactNumber, Username FROM Student AS a INNER JOIN Staff AS b ON a.CreatedBy = b.StaffID INNER JOIN GradeLevel AS c ON a.GradeID = c.GradeID",
+                        "SELECT StudentID, StudentName, GradeName, DOB, DATEDIFF(yy, DOB, GETDATE()) as Age, ContactNumber, Username FROM Student AS a INNER JOIN Staff AS b ON a.CreatedBy = b.StaffID INNER JOIN GradeLevel AS c ON a.GradeID = c.GradeID",
                         conn);
 
                 conn.Open();

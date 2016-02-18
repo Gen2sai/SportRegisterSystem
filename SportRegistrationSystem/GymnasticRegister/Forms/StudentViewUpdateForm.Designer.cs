@@ -45,12 +45,12 @@ namespace GymnasticRegister.Forms
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(646, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(754, 366);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(583, 384);
+            this.btnBack.Location = new System.Drawing.Point(691, 384);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace GymnasticRegister.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 419);
+            this.ClientSize = new System.Drawing.Size(778, 419);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridView1);
             this.Name = "StudentViewUpdateForm";

@@ -8,9 +8,9 @@ namespace GymnasticRegister.BusinessLogicLayer
 {
     internal class StudentBLL
     {
-        public static bool RegisterStudent(string studentName, int grade, int age, int contactNumber, int username)
+        public static bool RegisterStudent(string studentName, int grade, DateTime DOB, int contactNumber, int gender, int username)
         {
-            int status = StudentDAL.CreateStudent(studentName, grade, age, contactNumber, username);
+            int status = StudentDAL.CreateStudent(studentName, grade, DOB, gender, contactNumber, username);
             return status == 1;
         }
 

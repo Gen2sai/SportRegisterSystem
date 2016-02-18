@@ -11,6 +11,7 @@ namespace GymnasticRegister.Forms
     {
         private int StaffId;
         private int permission;
+        private const string dateFormat = "dd/MMM/yyyy";
 
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
@@ -21,7 +22,7 @@ namespace GymnasticRegister.Forms
                 myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
                 return myCp;
             }
-        } 
+        }
 
         public StudentRegistrationForm(int passedUsername, int passedPermission)
         {
@@ -30,11 +31,14 @@ namespace GymnasticRegister.Forms
             permission = passedPermission;
             lblStudentName.Text = SportRegistrationSystem.lblStudentName;
             lblGrade.Text = SportRegistrationSystem.lblGrade;
-            lblAge.Text = SportRegistrationSystem.lblAge;
+            lblDob.Text = SportRegistrationSystem.lblDob;
             lblContactNumber.Text = SportRegistrationSystem.lblContactNumber;
             btnCancel.Text = SportRegistrationSystem.lblCancel;
             btnSubmit.Text = SportRegistrationSystem.lblSubmit;
-            cbGrade.DataSource = System.Enum.GetValues(typeof (GradeEnum));
+            lblGender.Text = SportRegistrationSystem.lblGender;
+            cbGrade.DataSource = System.Enum.GetValues(typeof(GradeEnum));
+            dtp1.CustomFormat = dateFormat;
+            dtp1.Format = DateTimePickerFormat.Custom;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -48,11 +52,25 @@ namespace GymnasticRegister.Forms
         {
             StudentMenuForm form = new StudentMenuForm(StaffId, permission);
             if (!Authenticate.Authentication(StaffId, permission)) return;
-            if (txtStudentName != null)
+            if (!string.IsNullOrEmpty(txtStudentName.Text) || !string.IsNullOrEmpty(txtContactNumber.Text))
             {
+                int gender = -1;
+                switch (cbGender.SelectedItem.ToString())
+                {
+                    case "Male":
+                        {
+                            gender = 0;
+                            break;
+                        }
+                    case "Female":
+                        {
+                            gender = 1;
+                            break;
+                        }
+                }
                 bool registrationStatus = StudentBLL.RegisterStudent(txtStudentName.Text,
                     (int) System.Enum.Parse(typeof (GradeEnum), cbGrade.SelectedValue.ToString()),
-                    Convert.ToInt32(txtAge.Text), Convert.ToInt32(txtContactNumber.Text), StaffId);
+                    DateTime.Parse(dtp1.Value.ToString(dateFormat)), Convert.ToInt32(txtContactNumber.Text), gender, StaffId);
                 MessageBox.Show(registrationStatus
                     ? SportRegistrationSystem.lblRegisterSuccess
                     : SportRegistrationSystem.lblRegisterFailed);

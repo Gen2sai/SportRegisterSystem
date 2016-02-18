@@ -11,11 +11,11 @@
         Six = 6,
         Seven = 7,
         Eight = 8,
-        Nine = 9,
-        Ten = 10,
-        Bronze = 11,
-        Silver = 12,
-        Gold = 13,
-        Special = 14
+        Bronze = 9,
+        Silver = 10,
+        Gold = 11,
+        Special = 12,
+        Tumbling = 13,
+        Cheerleading = 14
     }
 }
