@@ -78,7 +78,7 @@ namespace GymnasticRegister.DataAccessLayer
 
                 cmd =
                     new SqlCommand(
-                        "SELECT StudentID, StudentName, GradeName, Age, ContactNumber, Username FROM Student AS a INNER JOIN Staff AS b ON a.CreatedBy = b.StaffID INNER JOIN GradeLevel AS c ON a.GradeID = c.GradeID WHERE StudentName = @studentName",
+                        "SELECT StudentID, StudentName, GradeName, DATEDIFF(yy, DOB, GETDATE()) as Age, ContactNumber, Username FROM Student AS a INNER JOIN Staff AS b ON a.CreatedBy = b.StaffID INNER JOIN GradeLevel AS c ON a.GradeID = c.GradeID WHERE StudentName = @studentName",
                         conn);
                 cmd.Parameters.AddWithValue("@studentName", StudentName);
 
