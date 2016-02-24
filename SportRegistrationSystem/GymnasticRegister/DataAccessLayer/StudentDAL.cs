@@ -117,7 +117,7 @@ namespace GymnasticRegister.DataAccessLayer
             }
             catch (Exception ex)
             {
-               ErrorLog.LogError(ex);
+                ErrorLog.LogError(ex);
                 return null;
             }
         }
@@ -171,9 +171,8 @@ namespace GymnasticRegister.DataAccessLayer
                 string tempDate1 = date.Month + "/" + "01" + "/" + date.Year;
                 date = DateTime.ParseExact(tempDate1, "M/dd/yyyy", null);
 
-                cmd = new SqlCommand("SELECT s.StudentID, s.StudentName, p.PaymentDate FROM Student AS s INNER JOIN Payment AS p ON s.StudentID = p.StudentID WHERE s.StudentID in (SELECT DISTINCT s.StudentID FROM Payment AS p INNER JOIN Student AS s ON s.StudentID = p.StudentID WHERE p.PaymentDate < Convert(date, @endDate) AND PaymentDate >= Convert(date, @startDate))ORDER BY p.PaymentDate DESC", conn);
+                cmd = new SqlCommand("SELECT * FROM Student WHERE StudentID in (SELECT DISTINCT p.StudentID FROM Payment AS p INNER JOIN Student AS s ON s.StudentID = p.StudentID WHERE p.PaymentDate < Convert(date, @endDate) AND PaymentDate >= Convert(date, @startDate)) AND StudentID NOT IN (SELECT DISTINCT StudentID FROM Payment WHERE PaymentDate = Convert(date, @endDate))", conn);
 
-                
                 cmd.Parameters.AddWithValue("@startDate", date);
                 cmd.Parameters.AddWithValue("@endDate", endDate);
 
