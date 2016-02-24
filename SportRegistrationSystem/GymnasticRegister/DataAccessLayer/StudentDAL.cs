@@ -78,7 +78,7 @@ namespace GymnasticRegister.DataAccessLayer
 
                 cmd =
                     new SqlCommand(
-                        "SELECT StudentID, StudentName, GradeName, Age, ContactNumber, Username FROM Student AS a INNER JOIN Staff AS b ON a.CreatedBy = b.StaffID INNER JOIN GradeLevel AS c ON a.GradeID = c.GradeID WHERE StudentName = @studentName",
+                        "SELECT StudentID, StudentName, GradeName, DATEDIFF(yy, DOB, GETDATE()) as Age, ContactNumber, Username FROM Student AS a INNER JOIN Staff AS b ON a.CreatedBy = b.StaffID INNER JOIN GradeLevel AS c ON a.GradeID = c.GradeID WHERE StudentName = @studentName",
                         conn);
                 cmd.Parameters.AddWithValue("@studentName", StudentName);
 
@@ -105,7 +105,7 @@ namespace GymnasticRegister.DataAccessLayer
                 SqlDataAdapter da;
                 DataTable dt = new DataTable();
 
-                cmd = new SqlCommand("SELECT s.StudentID, s.StudentName, g.GradeName, s.Age, p.PaymentDate FROM Student AS s Left JOIN Payment AS p ON p.StudentID = s.StudentID INNER JOIN GradeLevel AS g ON s.GradeID = g.GradeID WHERE StudentName = @studentName ORDER BY p.PaymentDate DESC", conn);
+                cmd = new SqlCommand("SELECT s.StudentID, s.StudentName, g.GradeName, DATEDIFF(yy, DOB, GETDATE()) as Age, p.PaymentDate FROM Student AS s Left JOIN Payment AS p ON p.StudentID = s.StudentID INNER JOIN GradeLevel AS g ON s.GradeID = g.GradeID WHERE StudentName = @studentName ORDER BY p.PaymentDate DESC", conn);
                 cmd.Parameters.AddWithValue("@studentName", studentName);
 
                 conn.Open();
@@ -164,9 +164,18 @@ namespace GymnasticRegister.DataAccessLayer
                 DataTable dt = new DataTable();
                 DateTime endDate = DateTime.Now;
 
-                cmd = new SqlCommand("SELECT s.StudentID, s.StudentName, p.PaymentDate FROM Student AS s INNER JOIN Payment AS p ON s.StudentID = p.StudentID  WHERE s.StudentID NOT in (SELECT DISTINCT s.StudentID FROM Payment AS p INNER JOIN Student AS s ON s.StudentID = p.StudentID WHERE p.PaymentDate <= Convert(date, @endDate) AND PaymentDate >= Convert(date, @startDate))ORDER BY p.PaymentDate DESC", conn);
-                cmd.Parameters.AddWithValue("@startDate", date.Date);
-                cmd.Parameters.AddWithValue("@endDate", endDate.Date);
+                //month/day/year
+                string tempDate = endDate.Month + "/" + "01" + "/" + endDate.Year;
+                endDate = DateTime.ParseExact(tempDate, "M/dd/yyyy", null);
+
+                string tempDate1 = date.Month + "/" + "01" + "/" + date.Year;
+                date = DateTime.ParseExact(tempDate1, "M/dd/yyyy", null);
+
+                cmd = new SqlCommand("SELECT s.StudentID, s.StudentName, p.PaymentDate FROM Student AS s INNER JOIN Payment AS p ON s.StudentID = p.StudentID WHERE s.StudentID in (SELECT DISTINCT s.StudentID FROM Payment AS p INNER JOIN Student AS s ON s.StudentID = p.StudentID WHERE p.PaymentDate < Convert(date, @endDate) AND PaymentDate >= Convert(date, @startDate))ORDER BY p.PaymentDate DESC", conn);
+
+                
+                cmd.Parameters.AddWithValue("@startDate", date);
+                cmd.Parameters.AddWithValue("@endDate", endDate);
 
                 conn.Open();
                 da = new SqlDataAdapter(cmd);

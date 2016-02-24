@@ -44,7 +44,7 @@ namespace GymnasticRegister.Forms
             // 
             this.btnAddStudent.Location = new System.Drawing.Point(6, 13);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(75, 23);
+            this.btnAddStudent.Size = new System.Drawing.Size(204, 23);
             this.btnAddStudent.TabIndex = 0;
             this.btnAddStudent.Text = "button1";
             this.btnAddStudent.UseVisualStyleBackColor = true;
@@ -54,7 +54,7 @@ namespace GymnasticRegister.Forms
             // 
             this.btnStudentManagement.Location = new System.Drawing.Point(6, 42);
             this.btnStudentManagement.Name = "btnStudentManagement";
-            this.btnStudentManagement.Size = new System.Drawing.Size(75, 23);
+            this.btnStudentManagement.Size = new System.Drawing.Size(204, 23);
             this.btnStudentManagement.TabIndex = 1;
             this.btnStudentManagement.Text = "button1";
             this.btnStudentManagement.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@ namespace GymnasticRegister.Forms
             // 
             this.btnCheckPayment.Location = new System.Drawing.Point(6, 71);
             this.btnCheckPayment.Name = "btnCheckPayment";
-            this.btnCheckPayment.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckPayment.Size = new System.Drawing.Size(204, 23);
             this.btnCheckPayment.TabIndex = 2;
             this.btnCheckPayment.Text = "button2";
             this.btnCheckPayment.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@ namespace GymnasticRegister.Forms
             // 
             this.btnPayment.Location = new System.Drawing.Point(6, 101);
             this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(75, 23);
+            this.btnPayment.Size = new System.Drawing.Size(204, 23);
             this.btnPayment.TabIndex = 3;
             this.btnPayment.Text = "button1";
             this.btnPayment.UseVisualStyleBackColor = true;
@@ -87,9 +87,9 @@ namespace GymnasticRegister.Forms
             this.groupBox1.Controls.Add(this.btnPayment);
             this.groupBox1.Controls.Add(this.btnAddStudent);
             this.groupBox1.Controls.Add(this.btnStudentManagement);
-            this.groupBox1.Location = new System.Drawing.Point(74, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(89, 159);
+            this.groupBox1.Size = new System.Drawing.Size(216, 159);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "StudentMenu";
@@ -98,7 +98,7 @@ namespace GymnasticRegister.Forms
             // 
             this.btnBack.Location = new System.Drawing.Point(6, 130);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(204, 23);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "button1";
             this.btnBack.UseVisualStyleBackColor = true;

@@ -114,7 +114,7 @@ namespace GymnasticRegister.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtPayableAmt.Text != "0" || txtPayableAmt.Text != "")
+            if (txtPayableAmt.Text != "0" || string.IsNullOrEmpty(txtPayableAmt.Text))
             {
                 int result = StudentBLL.MakePayment(tempStudentID, float.Parse(txtPayableAmt.Text),
                 DateTime.Parse(dtpDate.Value.ToString(dateFormat)), StaffId, txtRemark.Text);
@@ -140,7 +140,10 @@ namespace GymnasticRegister.Forms
                 form.Show();
                 this.Close();
             }
-            MessageBox.Show(SportRegistrationSystem.lblInvalidValue);
+            else
+            {
+                MessageBox.Show(SportRegistrationSystem.lblInvalidValue);
+            }
         }
 
         private void CreateReceipt(object sender, PrintPageEventArgs e)
