@@ -20,7 +20,7 @@ namespace GymnasticRegister.Forms
                 myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
                 return myCp;
             }
-        } 
+        }
 
         public StudentViewUpdateForm(int username, int permission)
         {
@@ -34,6 +34,15 @@ namespace GymnasticRegister.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            StudentMenuForm form = new StudentMenuForm(StaffId, passedPermission);
+            form.Show();
+            Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)dataGridView1.DataSource;
+            StudentBLL.UpdateStudentTable(dt);
             StudentMenuForm form = new StudentMenuForm(StaffId, passedPermission);
             form.Show();
             Close();

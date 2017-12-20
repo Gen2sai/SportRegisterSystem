@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using GymnasticRegister.Model;
 using GymnasticRegister.Resources;
+using System.Data;
+using GymnasticRegister.BusinessLogicLayer;
 
 namespace GymnasticRegister.Forms
 {
@@ -31,6 +33,10 @@ namespace GymnasticRegister.Forms
             btnLogout.Text = SportRegistrationSystem.lblLogout;
             StaffId = loginStatus[0].StaffId;
             permission = loginStatus[0].PermissionId;
+            DataTable dt = StudentBLL.GetLatePaymentByMonth();
+            int i = dt.Rows.Count;
+            if(i > 0)
+                MessageBox.Show("There is " + i + " student who has not paid for this month.");
         }
 
         public MainMenuForm(int staffId, int passedPermission)

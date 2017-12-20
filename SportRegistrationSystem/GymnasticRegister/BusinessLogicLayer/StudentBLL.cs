@@ -46,9 +46,13 @@ namespace GymnasticRegister.BusinessLogicLayer
 
         public static DataTable GetLatePaymentByMonth()
         {
-            DateTime date = DateTime.Now.AddMonths(-3);
-            DataTable dt = StudentDAL.GetLatePaymentByMonth(date);
+            DataTable dt = StudentDAL.GetLatePaymentByMonth();
             return dt;
+        }
+
+        public static void UpdateStudentTable(DataTable dt)
+        {
+            StudentDAL.UpdateStudentTable(dt);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using GymnasticRegister.Helper;
+using System.Globalization;
 
 namespace GymnasticRegister.DataAccessLayer
 {
@@ -154,7 +155,7 @@ namespace GymnasticRegister.DataAccessLayer
             }
         }
 
-        public static DataTable GetLatePaymentByMonth(DateTime date)
+        public static DataTable GetLatePaymentByMonth()
         {
             try
             {
@@ -162,19 +163,13 @@ namespace GymnasticRegister.DataAccessLayer
                 SqlCommand cmd;
                 SqlDataAdapter da;
                 DataTable dt = new DataTable();
-                DateTime endDate = DateTime.Now;
+                DateTime tempDate = DateTime.Now;
+                var tempDate2 = new DateTime(tempDate.Year, tempDate.Month, 1);
+                var date = tempDate2.ToString("MM/dd/yyyy");
 
-                //month/day/year
-                string tempDate = endDate.Month + "/" + "01" + "/" + endDate.Year;
-                endDate = DateTime.ParseExact(tempDate, "M/dd/yyyy", null);
+                cmd = new SqlCommand("SELECT * FROM Student WHERE StudentID in (SELECT DISTINCT p.StudentID FROM Payment AS p INNER JOIN Student AS s ON s.StudentID = p.StudentID WHERE p.PaymentDate > CONVERT(date, @date))", conn);
 
-                string tempDate1 = date.Month + "/" + "01" + "/" + date.Year;
-                date = DateTime.ParseExact(tempDate1, "M/dd/yyyy", null);
-
-                cmd = new SqlCommand("SELECT * FROM Student WHERE StudentID in (SELECT DISTINCT p.StudentID FROM Payment AS p INNER JOIN Student AS s ON s.StudentID = p.StudentID WHERE p.PaymentDate < Convert(date, @endDate) AND PaymentDate >= Convert(date, @startDate)) AND StudentID NOT IN (SELECT DISTINCT StudentID FROM Payment WHERE PaymentDate = Convert(date, @endDate))", conn);
-
-                cmd.Parameters.AddWithValue("@startDate", date);
-                cmd.Parameters.AddWithValue("@endDate", endDate);
+                cmd.Parameters.AddWithValue("@date", date);
 
                 conn.Open();
                 da = new SqlDataAdapter(cmd);
@@ -187,6 +182,38 @@ namespace GymnasticRegister.DataAccessLayer
             {
                 ErrorLog.LogError(ex);
                 return null;
+            }
+        }
+
+        public static void UpdateStudentTable(DataTable dt)
+        {
+            SqlConnection conn = new SqlConnection(ConnectionConfig.GetConnectionString());
+            SqlCommand cmd;
+            SqlDataAdapter da;
+
+            //forloop that shit and update into db
+            //sample query UPDATE Student SET StudentName = 'Chong Yow Tzen' WHERE StudentID = 2
+
+            foreach(DataRow row in dt.Rows)
+            {
+                int studentID = int.Parse(row["StudentID"].ToString());
+                string studentName = row["StudentName"].ToString();
+                int GradeName = (int)Enum.GradeEnum.Parse(typeof(Enum.GradeEnum), row["GradeName"].ToString());
+                DateTime DOB = DateTime.Parse(row["DOB"].ToString());
+                //int age = int.Parse(row["Age"].ToString());
+                int contactNumber = int.Parse(row["ContactNumber"].ToString());
+                //string username = row["Username"].ToString();
+
+                cmd = new SqlCommand("UPDATE Student SET StudentName=@studentName, GradeID=@gradeName, DOB=@DOB, ContactNumber=@contactNumber WHERE StudentID=@studentID", conn);
+                cmd.Parameters.AddWithValue("@studentName", studentName);
+                cmd.Parameters.AddWithValue("@gradeName", GradeName);
+                cmd.Parameters.AddWithValue("@DOB", DOB);
+                cmd.Parameters.AddWithValue("@contactNumber", contactNumber);
+                cmd.Parameters.AddWithValue("@studentID", studentID);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
         }
     }
